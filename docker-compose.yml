@@ -1,0 +1,48 @@
+services:
+  # Database Service
+  db:
+    image: postgres:16-alpine
+    container_name: portfolio-db
+    environment:
+      - POSTGRES_DB=portfolio_db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres -d portfolio_db" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build: .
+    container_name: portfolio-backend
+    ports:
+      - "8080:8080"
+    # These must be indented under 'backend'
+    environment:
+    - DB_URL=jdbc:postgresql://db:5432/portfolio_db
+    - DB_USERNAME=postgres
+    - DB_PASSWORD=${DB_PASSWORD}
+    - AUTH0_DOMAIN=${AUTH0_DOMAIN}
+    - AUTH0_AUDIENCE=${AUTH0_AUDIENCE}
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # Frontend Service
+  frontend:
+    build: ./frontend
+    container_name: portfolio-frontend
+    ports:
+      - "80:80"
+    environment:
+      VITE_API_BASE_URL: http://localhost:8080/api/v1
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:

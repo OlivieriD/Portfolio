@@ -1,0 +1,54 @@
+.admin-dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: var(--pastel-teal);
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar button {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 12px;
+    border-radius: 8px;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sidebar button:hover {
+    background: var(--pastel-blue);
+}
+
+.content {
+    flex: 1;
+    padding: 2rem;
+    background: var(--bg-main);
+}
+
+.pastel-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+}
+
+.pastel-table th {
+    background: var(--accent-soft);
+    padding: 15px;
+    text-align: left;
+}
+
+.pastel-table td {
+    padding: 15px;
+    border-bottom: 1px solid var(--accent-soft);
+}

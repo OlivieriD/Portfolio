@@ -1,0 +1,31 @@
+:root {
+    --bg-main: #F0F4F8;
+    --bg-card: #FFFFFF;
+    --pastel-blue: #B3C8CF;
+    --pastel-teal: #BED7DC;
+    --gray-text: #4A5568;
+    --gray-muted: #A0AEC0;
+    --accent-soft: #E2E8F0;
+
+    --shadow-soft: 0 10px 15px -3px rgba(148, 163, 184, 0.1);
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--gray-text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.pastel-button {
+    background-color: var(--pastel-blue);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.pastel-button:hover {
+    background-color: var(--pastel-teal);
+}
