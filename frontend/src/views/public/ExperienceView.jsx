@@ -9,7 +9,7 @@ const ExperienceView = () => {
     const { tData } = useLanguage();
 
     useEffect(() => {
-        axiosInstance.get('/experience')
+        axiosInstance.get('/experiences')
             .then(res => setExperiences(res.data))
             .catch(err => console.error("Error fetching experience:", err));
     }, []);

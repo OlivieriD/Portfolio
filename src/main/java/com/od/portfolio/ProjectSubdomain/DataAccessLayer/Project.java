@@ -23,6 +23,7 @@ public class Project {
     @Column(columnDefinition = "TEXT")
     private String descriptionFr;
 
+    @Column(columnDefinition = "TEXT")
     private String imageUrl;
     private String githubLink;
     private String liveLink;

@@ -223,3 +223,25 @@
     background: #A8DADC;
     color: white;
 }
+
+/* Empty State */
+.empty-state-text {
+    text-align: center;
+    color: #A8B5C5;
+    font-size: 1.1rem;
+    padding: 3rem 1rem;
+    font-style: italic;
+}
+
+/* Responsive adjustments for project grid */
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 1rem;
+    }
+    
+    .skills-container {
+        padding: 0 1rem;
+    }
+}
