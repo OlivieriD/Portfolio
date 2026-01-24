@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ProjectService } from '../../services/ProjectService';
 import { TestimonialService } from '../../services/TestimonialService';
 import AdminTable from '../../components/admin/AdminTable';
-import '../../styles/Admin.css';
+import '../../styles/AdminDashboard.css';
 
 const AdminDashboard = () => {
     const [activeTab, setActiveTab] = useState('projects');
@@ -29,14 +29,36 @@ const AdminDashboard = () => {
     return (
         <div className="admin-dashboard">
             <aside className="sidebar">
-                <button onClick={() => setActiveTab('projects')}>Projects</button>
-                <button onClick={() => setActiveTab('testimonials')}>Testimonials</button>
-                <button onClick={() => setActiveTab('messages')}>Messages</button>
+                <div className="sidebar-title">Admin Panel</div>
+                <button 
+                    className={activeTab === 'projects' ? 'active' : ''} 
+                    onClick={() => setActiveTab('projects')}
+                >
+                    Projects
+                </button>
+                <button 
+                    className={activeTab === 'testimonials' ? 'active' : ''} 
+                    onClick={() => setActiveTab('testimonials')}
+                >
+                    Testimonials
+                </button>
+                <button 
+                    className={activeTab === 'messages' ? 'active' : ''} 
+                    onClick={() => setActiveTab('messages')}
+                >
+                    Messages
+                </button>
             </aside>
 
             <main className="content">
-                <h1>Managing {activeTab.toUpperCase()}</h1>
-                <button className="add-new-btn">+ Add New</button>
+                <div className="content-header">
+                    <h1 className="content-title">Manage {activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}</h1>
+                    <p className="content-subtitle">View and manage your {activeTab}</p>
+                </div>
+
+                <button className="pastel-button" style={{ marginBottom: '2rem', width: 'fit-content' }}>
+                    + Add New
+                </button>
 
                 <AdminTable
                     type={activeTab}

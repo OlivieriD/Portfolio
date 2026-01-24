@@ -11,7 +11,7 @@ export const useLanguage = () => {
             return "";
         }
 
-        return text.toString().toUpperCase();
+        return text.toString();
     };
 
     const toggleLanguage = () => {

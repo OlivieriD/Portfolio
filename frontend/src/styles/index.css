@@ -1,31 +1,49 @@
 :root {
-    --bg-main: #F0F4F8;
+    --bg-main: #FFFFFF;
+    --bg-light: #F8F9FA;
+    --bg-lighter: #F0F3F7;
     --bg-card: #FFFFFF;
-    --pastel-blue: #B3C8CF;
-    --pastel-teal: #BED7DC;
-    --gray-text: #4A5568;
-    --gray-muted: #A0AEC0;
+    --pastel-blue: #A8DADC;
+    --pastel-blue-dark: #8FBDD4;
+    --pastel-gray: #D4D9E0;
+    --pastel-gray-light: #E8ECEF;
+    --gray-text: #5A6C7D;
+    --gray-muted: #A8B5C5;
     --accent-soft: #E2E8F0;
+    --accent-lighter: #F5F7FA;
 
-    --shadow-soft: 0 10px 15px -3px rgba(148, 163, 184, 0.1);
+    --shadow-soft: 0 4px 12px rgba(168, 218, 220, 0.08);
+    --shadow-medium: 0 8px 20px rgba(168, 218, 220, 0.12);
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
     background-color: var(--bg-main);
     color: var(--gray-text);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .pastel-button {
     background-color: var(--pastel-blue);
-    color: white;
+    color: var(--gray-text);
     border: none;
     padding: 10px 20px;
     border-radius: 8px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
+    font-weight: 500;
 }
 
 .pastel-button:hover {
-    background-color: var(--pastel-teal);
+    background-color: var(--pastel-blue-dark);
+    box-shadow: var(--shadow-soft);
+}
+
+.pastel-button:active {
+    transform: scale(0.98);
 }

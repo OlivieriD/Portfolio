@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import axiosInstance from '../../api/axiosInstance';
 import { useLanguage } from '../../hooks/useLanguage';
 
 const ExperienceView = () => {
     const [experiences, setExperiences] = useState([]);
+    const { t } = useTranslation();
     const { tData } = useLanguage();
 
     useEffect(() => {
@@ -20,11 +22,11 @@ const ExperienceView = () => {
                         <h3>{exp.company}</h3>
                         <p className="role">{tData(exp.roleEn, exp.roleFr)}</p>
                         <p className="description">{tData(exp.descriptionEn, exp.descriptionFr)}</p>
-                        <span className="date-tag">{exp.startDate} - {exp.endDate || 'Present'}</span>
+                        <span className="date-tag">{exp.startDate} - {exp.endDate || t('experience_present')}</span>
                     </div>
                 ))
             ) : (
-                <p>No experiences found.</p>
+                <p className="empty-state-text">{t('experience_empty')}</p>
             )}
         </div>
     );

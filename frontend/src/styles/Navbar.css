@@ -3,19 +3,75 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 10%;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
-    border-bottom: 1px solid var(--accent-soft);
+    border-bottom: 1px solid #E8ECEF;
+    box-shadow: 0 2px 8px rgba(168, 218, 220, 0.05);
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #5A6C7D;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: #A8DADC;
+}
+
+.navbar-nav {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.navbar-nav a {
+    color: #5A6C7D;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.navbar-nav a:hover {
+    color: #A8DADC;
+}
+
+.navbar-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #A8DADC;
+    transition: width 0.3s ease;
+}
+
+.navbar-nav a:hover::after {
+    width: 100%;
 }
 
 .admin-pill {
-    background: var(--pastel-blue);
+    background: linear-gradient(135deg, var(--pastel-blue) 0%, var(--pastel-blue-dark) 100%);
     color: white;
     border: none;
-    padding: 5px 15px;
+    padding: 8px 20px;
     border-radius: 20px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+    font-weight: 600;
     cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(168, 218, 220, 0.2);
+}
+
+.admin-pill:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(168, 218, 220, 0.3);
 }

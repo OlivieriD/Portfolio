@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import ExperienceView from './ExperienceView';
 import EducationView from './EducationView';
 import SkillView from './SkillView';
@@ -6,15 +7,49 @@ import ProjectView from './ProjectView';
 import ContactView from './ContactView';
 
 const HomeView = () => {
+    const { t } = useTranslation();
+    
     return (
         <div className="home-container">
-            <header className="hero"><h1>My Portfolio</h1></header>
+            <header className="hero">
+                <h1>{t('home_title')}</h1>
+                <p className="hero-subtitle">{t('home_subtitle')}</p>
+            </header>
 
-            <section id="projects"><h2>Projects</h2><ProjectView /></section>
-            <section id="skills"><h2>Skills</h2><SkillView /></section>
-            <section id="experience"><h2>Experience</h2><ExperienceView /></section>
-            <section id="education"><h2>Education</h2><EducationView /></section>
-            <section id="contact"><h2>Contact</h2><ContactView /></section>
+            <section className="section-wrapper" id="projects">
+                <h2>{t('projects_title')}</h2>
+                <div className="section-content">
+                    <ProjectView />
+                </div>
+            </section>
+
+            <section className="section-wrapper" id="skills">
+                <h2>{t('skills_title')}</h2>
+                <div className="section-content">
+                    <SkillView />
+                </div>
+            </section>
+
+            <section className="section-wrapper" id="experience">
+                <h2>{t('experience_title')}</h2>
+                <div className="section-content">
+                    <ExperienceView />
+                </div>
+            </section>
+
+            <section className="section-wrapper" id="education">
+                <h2>{t('education_title')}</h2>
+                <div className="section-content">
+                    <EducationView />
+                </div>
+            </section>
+
+            <section className="section-wrapper" id="contact">
+                <h2>{t('contact_title')}</h2>
+                <div className="section-content">
+                    <ContactView />
+                </div>
+            </section>
         </div>
     );
 };

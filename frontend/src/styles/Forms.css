@@ -1,0 +1,216 @@
+/* Form Styles */
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="tel"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #E8ECEF;
+    border-radius: 8px;
+    background-color: #F8F9FA;
+    color: #5A6C7D;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(168, 218, 220, 0.05);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #A8DADC;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(168, 218, 220, 0.12);
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder,
+input[type="number"]::placeholder,
+input[type="date"]::placeholder,
+input[type="tel"]::placeholder,
+textarea::placeholder {
+    color: #A8B5C5;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #5A6C7D;
+    font-size: 0.95rem;
+}
+
+/* Form Groups */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Button Styles */
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+    padding: 11px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* Primary Button */
+.pastel-button,
+button:not(.secondary, .danger, .lang-toggle),
+input[type="submit"] {
+    background: linear-gradient(135deg, #A8DADC 0%, #8FBDD4 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(168, 218, 220, 0.2);
+}
+
+.pastel-button:hover,
+button:not(.secondary, .danger, .lang-toggle):hover,
+input[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(168, 218, 220, 0.3);
+}
+
+.pastel-button:active,
+button:not(.secondary, .danger, .lang-toggle):active,
+input[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* Secondary Button */
+.secondary {
+    background-color: #E8ECEF;
+    color: #5A6C7D;
+    border: 1px solid #D4D9E0;
+}
+
+.secondary:hover {
+    background-color: #D4D9E0;
+    box-shadow: 0 4px 12px rgba(168, 218, 220, 0.1);
+}
+
+/* Danger Button */
+.danger {
+    background-color: #E8ECEF;
+    color: #5A6C7D;
+    border: 1px solid #D4D9E0;
+}
+
+.danger:hover {
+    background-color: #D4D9E0;
+}
+
+/* Disabled State */
+button:disabled,
+input[type="submit"]:disabled,
+input[type="button"]:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Status Messages */
+.status-msg,
+.error-msg,
+.success-msg,
+.warning-msg {
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.success-msg {
+    background-color: #E8F5E9;
+    color: #2E7D32;
+    border: 1px solid #C8E6C9;
+}
+
+.error-msg {
+    background-color: #FFEBEE;
+    color: #C62828;
+    border: 1px solid #FFCDD2;
+}
+
+.warning-msg {
+    background-color: #FFF3E0;
+    color: #E65100;
+    border: 1px solid #FFE0B2;
+}
+
+.status-msg {
+    background-color: #E3F2FD;
+    color: #1976D2;
+    border: 1px solid #BBDEFB;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    button,
+    input[type="submit"],
+    input[type="button"],
+    input[type="reset"] {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea,
+    select {
+        padding: 11px 14px;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+}
