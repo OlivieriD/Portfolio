@@ -1,4 +1,5 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
+import { useEffect, useRef } from 'react';
 import Navbar from './components/common/Navbar';
 import HomeView from './views/public/HomeView';
 import ProjectsPage from './views/public/ProjectsPage';
@@ -6,11 +7,21 @@ import SkillsPage from './views/public/SkillsPage';
 import ExperiencePage from './views/public/ExperiencePage';
 import EducationPage from './views/public/EducationPage';
 import ContactPage from './views/public/ContactPage';
-import AdminDashboard from './views/admin/AdminDashboard';
+import TestimonialPage from './views/public/TestimonialPage';
+import AdminDashboard from './views/admin/AdminDashboard.clean';
 import { useAuth0 } from '@auth0/auth0-react';
+import { injectToken } from './api/axiosInstance';
 
 function App() {
-    const { isAuthenticated, isLoading } = useAuth0();
+    const { isAuthenticated, isLoading, getAccessTokenSilently } = useAuth0();
+    const tokenInterceptorSet = useRef(false);
+
+    useEffect(() => {
+        if (!tokenInterceptorSet.current) {
+            injectToken(getAccessTokenSilently);
+            tokenInterceptorSet.current = true;
+        }
+    }, [getAccessTokenSilently]);
 
     if (isLoading) return <div className="loading-screen">Loading...</div>;
 
@@ -25,6 +36,7 @@ function App() {
                 <Route path="/experience" element={<ExperiencePage />} />
                 <Route path="/education" element={<EducationPage />} />
                 <Route path="/contact" element={<ContactPage />} />
+                <Route path="/testimonials" element={<TestimonialPage />} />
 
                 {/* Protected Admin Routes */}
                 <Route

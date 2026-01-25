@@ -1,7 +1,8 @@
 import axiosInstance from '../api/axiosInstance';
-const SUBDOMAIN = '/skills';
 
-export const SkillService = {
+const SUBDOMAIN = '/hobbies';
+
+export const HobbyService = {
     getAll: () => axiosInstance.get(SUBDOMAIN),
     create: (data) => axiosInstance.post(SUBDOMAIN, data),
     update: (id, data) => axiosInstance.put(`${SUBDOMAIN}/${id}`, data),

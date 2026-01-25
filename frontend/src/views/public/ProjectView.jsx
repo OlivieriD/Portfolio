@@ -3,16 +3,19 @@ import { useTranslation } from 'react-i18next';
 import { ProjectService } from '../../services/ProjectService';
 import { useLanguage } from '../../hooks/useLanguage';
 
-const ProjectView = () => {
+const ProjectView = ({ limit }) => {
     const [projects, setProjects] = useState([]);
     const { t } = useTranslation();
     const { tData } = useLanguage();
 
     useEffect(() => {
         ProjectService.getAll()
-            .then(res => setProjects(res.data))
+            .then(res => {
+                const sorted = res.data.sort((a, b) => new Date(b.id) - new Date(a.id));
+                setProjects(limit ? sorted.slice(0, limit) : sorted);
+            })
             .catch(err => console.error("Error fetching projects:", err));
-    }, []);
+    }, [limit]);
 
     return (
         <div className="project-grid">

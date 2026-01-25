@@ -4,10 +4,11 @@ const SUBDOMAIN = '/testimonials';
 
 export const TestimonialService = {
     // Public: only gets approved ones
-    getApproved: () => axiosInstance.get(`${SUBDOMAIN}/approved`),
+    getApproved: () => axiosInstance.get(`${SUBDOMAIN}/public`),
     // Admin: gets all for moderation
     getAll: () => axiosInstance.get(SUBDOMAIN),
     create: (data) => axiosInstance.post(SUBDOMAIN, data),
-    updateStatus: (id, status) => axiosInstance.put(`${SUBDOMAIN}/${id}/status?status=${status}`),
+    update: (id, data) => axiosInstance.patch(`${SUBDOMAIN}/${id}/approve?approved=${data.approved}`),
+    updateStatus: (id, approved) => axiosInstance.patch(`${SUBDOMAIN}/${id}/approve?approved=${approved}`),
     delete: (id) => axiosInstance.delete(`${SUBDOMAIN}/${id}`),
 };

@@ -3,14 +3,17 @@ import { useTranslation } from 'react-i18next';
 import { EducationService } from '../../services/EducationService';
 import { useLanguage } from '../../hooks/useLanguage';
 
-const EducationView = () => {
+const EducationView = ({ limit }) => {
     const [edu, setEdu] = useState([]);
     const { t } = useTranslation();
     const { tData } = useLanguage();
 
     useEffect(() => {
-        EducationService.getAll().then(res => setEdu(res.data)).catch(console.error);
-    }, []);
+        EducationService.getAll().then(res => {
+            const sorted = res.data.sort((a, b) => new Date(b.startDate) - new Date(a.startDate));
+            setEdu(limit ? sorted.slice(0, limit) : sorted);
+        }).catch(console.error);
+    }, [limit]);
 
     return (
         <div className="education-grid">

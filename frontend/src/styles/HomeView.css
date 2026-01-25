@@ -99,6 +99,40 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+}
+
+/* View More Button */
+.view-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    padding: 0 2rem;
+}
+
+.view-more-btn {
+    display: inline-block;
+    padding: 0.875rem 2.5rem;
+    background: linear-gradient(135deg, #A8DADC 0%, #8FBDD4 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.view-more-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(168, 218, 220, 0.3);
+    background: linear-gradient(135deg, #8FBDD4 0%, #7AADE8 100%);
+}
+
+.view-more-btn:active {
+    transform: translateY(-1px);
+}
+    padding: 0 2rem;
     width: 100%;
 }
     padding: 0 2rem;

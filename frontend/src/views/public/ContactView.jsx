@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import axiosInstance from '../../api/axiosInstance';
+import { sanitizeObjectStrings, isValidEmail, sanitizeString } from '../../utils/sanitize';
 
 const ContactView = () => {
     const { t } = useTranslation();
@@ -11,8 +12,14 @@ const ContactView = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        // Basic validation
+        if (!isValidEmail(formData.senderEmail) || !sanitizeString(formData.senderName)) {
+            setStatus(t('contact_error'));
+            return;
+        }
+        const safePayload = sanitizeObjectStrings(formData);
         try {
-            await axiosInstance.post('/messages', formData);
+            await axiosInstance.post('/messages', safePayload);
             setStatus(t('contact_success'));
             setFormData({ senderName: '', senderEmail: '', subject: '', content: '' });
         } catch (err) {

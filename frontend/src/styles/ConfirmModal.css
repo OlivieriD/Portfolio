@@ -1,0 +1,114 @@
+/* Confirm Modal Styles */
+.confirm-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(90, 108, 125, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1100;
+    padding: 2rem;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.confirm-modal-content {
+    background: #FFFFFF;
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(168, 218, 220, 0.3);
+    max-width: 480px;
+    width: 100%;
+    border: 2px solid #E8ECEF;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.confirm-modal-header {
+    padding: 1.5rem 2rem;
+    border-bottom: 2px solid #E8ECEF;
+    background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%);
+    border-radius: 16px 16px 0 0;
+}
+
+.confirm-modal-header h3 {
+    margin: 0;
+    color: #5A6C7D;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.confirm-modal-body {
+    padding: 2rem;
+}
+
+.confirm-modal-body p {
+    margin: 0;
+    color: #5A6C7D;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.confirm-modal-actions {
+    padding: 1.5rem 2rem;
+    border-top: 2px solid #E8ECEF;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    background: #F8F9FA;
+    border-radius: 0 0 16px 16px;
+}
+
+.confirm-cancel-btn,
+.confirm-delete-btn {
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.confirm-cancel-btn {
+    background: #FFFFFF;
+    color: #5A6C7D;
+    border-color: #E8ECEF;
+}
+
+.confirm-cancel-btn:hover {
+    background: #F8F9FA;
+    border-color: #A8B5C5;
+}
+
+.confirm-delete-btn {
+    background: #FFCDD2;
+    color: #C62828;
+    border-color: #FFCDD2;
+}
+
+.confirm-delete-btn:hover {
+    background: #EF9A9A;
+    border-color: #EF9A9A;
+    box-shadow: 0 4px 12px rgba(198, 40, 40, 0.2);
+}

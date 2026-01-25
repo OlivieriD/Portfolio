@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import ExperienceView from './ExperienceView';
 import EducationView from './EducationView';
 import SkillView from './SkillView';
@@ -19,28 +20,40 @@ const HomeView = () => {
             <section className="section-wrapper" id="projects">
                 <h2>{t('projects_title')}</h2>
                 <div className="section-content">
-                    <ProjectView />
+                    <ProjectView limit={1} />
+                </div>
+                <div className="view-more-container">
+                    <Link to="/projects" className="view-more-btn">{t('view_more')}</Link>
                 </div>
             </section>
 
             <section className="section-wrapper" id="skills">
                 <h2>{t('skills_title')}</h2>
                 <div className="section-content">
-                    <SkillView />
+                    <SkillView limit={1} />
+                </div>
+                <div className="view-more-container">
+                    <Link to="/skills" className="view-more-btn">{t('view_more')}</Link>
                 </div>
             </section>
 
             <section className="section-wrapper" id="experience">
                 <h2>{t('experience_title')}</h2>
                 <div className="section-content">
-                    <ExperienceView />
+                    <ExperienceView limit={1} />
+                </div>
+                <div className="view-more-container">
+                    <Link to="/experience" className="view-more-btn">{t('view_more')}</Link>
                 </div>
             </section>
 
             <section className="section-wrapper" id="education">
                 <h2>{t('education_title')}</h2>
                 <div className="section-content">
-                    <EducationView />
+                    <EducationView limit={1} />
+                </div>
+                <div className="view-more-container">
+                    <Link to="/education" className="view-more-btn">{t('view_more')}</Link>
                 </div>
             </section>
 

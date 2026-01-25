@@ -22,13 +22,22 @@ const Navbar = () => {
                 <Link to="/experience" className={isActive('/experience') ? 'nav-link active' : 'nav-link'}>{t('nav_experience')}</Link>
                 <Link to="/education" className={isActive('/education') ? 'nav-link active' : 'nav-link'}>{t('nav_education')}</Link>
                 <Link to="/contact" className={isActive('/contact') ? 'nav-link active' : 'nav-link'}>{t('nav_contact')}</Link>
+                <Link to="/testimonials" className={isActive('/testimonials') ? 'nav-link active' : 'nav-link'}>{t('nav_testimonials')}</Link>
+                {isAuthenticated && (
+                    <Link
+                        to="/admin/app-management"
+                        className={isActive('/admin/app-management') ? 'nav-link active' : 'nav-link'}
+                    >
+                        {t('nav_app_management')}
+                    </Link>
+                )}
                 <button className="lang-toggle" onClick={toggleLanguage}>
                     {currentLang.toUpperCase()}
                 </button>
                 {isAuthenticated ? (
                     <button className="admin-pill" onClick={() => logout()}>Logout</button>
                 ) : (
-                    <button className="admin-pill" onClick={() => loginWithRedirect()}>Admin</button>
+                    <button className="admin-pill" onClick={() => loginWithRedirect()}>Login</button>
                 )}
             </div>
         </nav>

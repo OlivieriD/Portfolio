@@ -29,6 +29,13 @@
     margin-bottom: 1.5rem;
     padding: 0 0.75rem;
     letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.admin-icon {
+    font-size: 1.5rem;
 }
 
 .sidebar button {
@@ -42,6 +49,13 @@
     transition: all 0.3s ease;
     font-weight: 500;
     font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.tab-icon {
+    font-size: 1.2rem;
 }
 
 .sidebar button:hover {
@@ -69,6 +83,13 @@
 
 .content-header {
     margin-bottom: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.content-header > div {
+    flex: 1;
 }
 
 .content-title {
@@ -404,4 +425,164 @@
         width: 95%;
         padding: 1.5rem;
     }
+}
+
+/* Action Buttons */
+.actions-cell {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.edit-btn,
+.delete-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.edit-btn {
+    background: linear-gradient(135deg, #A8DADC 0%, #8FBDD4 100%);
+    color: white;
+}
+
+.edit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(168, 218, 220, 0.3);
+}
+
+.delete-btn {
+    background: #E8ECEF;
+    color: #5A6C7D;
+}
+
+.delete-btn:hover {
+    background: #D4D9E0;
+    transform: translateY(-2px);
+}
+
+/* Empty and Loading States */
+.empty-state,
+.loading-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #A8B5C5;
+    font-size: 1.1rem;
+}
+
+.loading-state {
+    font-style: italic;
+}
+
+.admin-table-container {
+    overflow-x: auto;
+}
+
+/* App Management Styles */
+.app-management {
+    padding: 2.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.welcome-card {
+    background: linear-gradient(135deg, #A8DADC 0%, #8FBDD4 100%);
+    padding: 3rem;
+    border-radius: 16px;
+    color: white;
+    margin-bottom: 3rem;
+    box-shadow: 0 8px 24px rgba(168, 218, 220, 0.3);
+}
+
+.welcome-title {
+    font-size: 2.5rem;
+    margin: 0 0 0.5rem 0;
+    font-weight: 700;
+}
+
+.welcome-subtitle {
+    font-size: 1.1rem;
+    margin: 0;
+    opacity: 0.95;
+}
+
+.management-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.info-card {
+    background: #F8F9FA;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 2px solid #E8ECEF;
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    border-color: #A8DADC;
+    box-shadow: 0 8px 24px rgba(168, 218, 220, 0.15);
+    transform: translateY(-4px);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.info-card h3 {
+    color: #5A6C7D;
+    margin: 0 0 1rem 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.info-card p {
+    color: #A8B5C5;
+    margin: 0 0 1rem 0;
+    line-height: 1.6;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-list li {
+    color: #5A6C7D;
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.getting-started {
+    background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%);
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 2px solid #E8ECEF;
+    text-align: center;
+}
+
+.getting-started h2 {
+    color: #5A6C7D;
+    margin: 0 0 1rem 0;
+    font-size: 1.8rem;
+}
+
+.getting-started p {
+    color: #A8B5C5;
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto;
 }

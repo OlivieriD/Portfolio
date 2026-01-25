@@ -12,6 +12,7 @@ i18n.use(initReactI18next).init({
                 nav_experience: "Experience",
                 nav_education: "Education",
                 nav_contact: "Contact",
+                nav_app_management: "App Management",
                 
                 // Home Page
                 home_title: "My Portfolio",
@@ -53,6 +54,51 @@ i18n.use(initReactI18next).init({
                 contact_success: "Message Sent!",
                 contact_error: "Error sending message.",
                 
+                // Testimonials
+                nav_testimonials: "Testimonials",
+                testimonials_title: "Testimonials",
+                testimonials_subtitle: "Hear from people I've worked with and helped",
+                testimonials_empty: "No testimonials yet. Be the first to share!",
+                testimonials_form_title: "Share Your Feedback",
+                testimonials_form_subtitle: "Tell us about your experience working with me",
+                testimonials_form_name: "Your Name",
+                testimonials_form_name_placeholder: "John Doe",
+                testimonials_form_content: "Your Testimonial",
+                testimonials_form_content_placeholder: "Share your feedback and experience...",
+                testimonials_form_submit: "Submit Testimonial",
+                testimonials_form_submitting: "Submitting...",
+                testimonials_form_note: "Your testimonial will be reviewed before appearing on the site.",
+                testimonials_submission_success: "Thank you! Your testimonial has been submitted and is awaiting approval.",
+                testimonials_submission_error: "Error submitting testimonial. Please try again.",
+                
+                // Admin Dashboard
+                admin_title: "Admin Dashboard",
+                admin_subtitle: "Manage your portfolio content",
+                admin_app_management: "App Management",
+                admin_projects: "Projects",
+                admin_skills: "Skills",
+                admin_experiences: "Experience",
+                admin_education: "Education",
+                admin_hobbies: "Hobbies",
+                admin_testimonials: "Testimonials",
+                admin_contacts: "Contact Messages",
+                admin_add_new: "+ Add New",
+                admin_confirm_delete: "Confirm Delete",
+                admin_delete_message: "Are you sure you want to delete this item? This action cannot be undone.",
+                admin_delete_btn: "Delete",
+                admin_cancel_btn: "Cancel",
+                admin_save_btn: "Save",
+                admin_edit_modal_title: "Edit",
+                admin_add_modal_title: "Add",
+                admin_form_error: "Failed to save. Please try again.",
+                admin_loading: "Loading...",
+                admin_empty_state: "No items found. Click 'Add New' to create one.",
+                admin_success: "Operation completed successfully!",
+                
+                // View More
+                view_more: "View More",
+                view_all: "View All",
+                
                 // Common
                 loading: "Loading Portfolio...",
                 technologies: "Technologies",
@@ -70,6 +116,7 @@ i18n.use(initReactI18next).init({
                 nav_experience: "Expérience",
                 nav_education: "Éducation",
                 nav_contact: "Contact",
+                nav_app_management: "Gestion de l'application",
                 
                 // Home Page
                 home_title: "Mon Portfolio",
@@ -110,6 +157,51 @@ i18n.use(initReactI18next).init({
                 contact_submit: "Envoyer le message",
                 contact_success: "Message envoyé!",
                 contact_error: "Erreur lors de l'envoi du message.",
+                
+                // Testimonials
+                nav_testimonials: "Témoignages",
+                testimonials_title: "Témoignages",
+                testimonials_subtitle: "Entendez parler des personnes avec qui j'ai travaillé",
+                testimonials_empty: "Pas encore de témoignages. Soyez le premier à partager!",
+                testimonials_form_title: "Partagez Vos Commentaires",
+                testimonials_form_subtitle: "Dites-nous comment s'est déroulée votre collaboration",
+                testimonials_form_name: "Votre Nom",
+                testimonials_form_name_placeholder: "Jean Dupont",
+                testimonials_form_content: "Votre Témoignage",
+                testimonials_form_content_placeholder: "Partagez vos commentaires et votre expérience...",
+                testimonials_form_submit: "Soumettre le Témoignage",
+                testimonials_form_submitting: "Soumission en cours...",
+                testimonials_form_note: "Votre témoignage sera examiné avant d'apparaître sur le site.",
+                testimonials_submission_success: "Merci! Votre témoignage a été soumis et attend l'approbation.",
+                testimonials_submission_error: "Erreur lors de la soumission. Veuillez réessayer.",
+                
+                // Admin Dashboard
+                admin_title: "Tableau de Bord Admin",
+                admin_subtitle: "Gérez le contenu de votre portfolio",
+                admin_app_management: "Gestion de l'Application",
+                admin_projects: "Projets",
+                admin_skills: "Compétences",
+                admin_experiences: "Expérience",
+                admin_education: "Éducation",
+                admin_hobbies: "Loisirs",
+                admin_testimonials: "Témoignages",
+                admin_contacts: "Messages de Contact",
+                admin_add_new: "+ Ajouter un nouveau",
+                admin_confirm_delete: "Confirmer la Suppression",
+                admin_delete_message: "Êtes-vous sûr de vouloir supprimer cet élément? Cette action ne peut pas être annulée.",
+                admin_delete_btn: "Supprimer",
+                admin_cancel_btn: "Annuler",
+                admin_save_btn: "Enregistrer",
+                admin_edit_modal_title: "Modifier",
+                admin_add_modal_title: "Ajouter",
+                admin_form_error: "Échec de la sauvegarde. Veuillez réessayer.",
+                admin_loading: "Chargement...",
+                admin_empty_state: "Aucun élément trouvé. Cliquez sur 'Ajouter un nouveau' pour en créer un.",
+                admin_success: "Opération terminée avec succès!",
+                
+                // View More
+                view_more: "Voir plus",
+                view_all: "Voir tout",
                 
                 // Common
                 loading: "Chargement du portfolio...",
