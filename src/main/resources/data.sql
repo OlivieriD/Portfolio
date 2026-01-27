@@ -1,128 +1,140 @@
--- Dummy Experience Data
-INSERT INTO experience (company, role_en, role_fr, description_en, description_fr, start_date, end_date, location)
+-- Work Experience Data
+INSERT INTO experiences (company, role_en, role_fr, description_en, description_fr, start_date, end_date, location)
 VALUES 
-('Tech Innovations Inc.', 'Senior Software Engineer', 'Ingénieur Logiciel Senior', 
- 'Led development of microservices architecture serving 10M+ users. Implemented CI/CD pipelines and reduced deployment time by 60%.', 
- 'Dirigé le développement d''une architecture de microservices desservant plus de 10 millions d''utilisateurs.', 
- '2022-01-15', NULL, 'San Francisco, CA'),
+('Lulu Bistro', 'Waiter, Host, Busboy', 'Serveur, Hôte, Commis de Busboy', 
+ 'Table-side order and service, floor plan reservations and seating management, client greeting at the front desk, table dish removal, and cleaning. Over 3 years of customer service experience developing strong communication and leadership skills.', 
+ 'Service à table, gestion des réservations et des places, accueil des clients, nettoyage. Plus de 3 ans d''expérience dans le service à la clientèle.', 
+ '2023-04-01', NULL, 'Boucherville, QC'),
  
-('Digital Solutions Ltd.', 'Full Stack Developer', 'Développeur Full Stack', 
- 'Built responsive web applications using React and Spring Boot. Collaborated with cross-functional teams to deliver features on time.', 
- 'Construit des applications web réactives utilisant React et Spring Boot.', 
- '2020-06-01', '2021-12-31', 'Montreal, QC'),
- 
-('StartUp Hub', 'Junior Developer', 'Développeur Junior', 
- 'Developed RESTful APIs and frontend components. Participated in code reviews and agile development processes.', 
- 'Développé des APIs RESTful et des composants frontend.', 
- '2019-03-01', '2020-05-31', 'Toronto, ON');
+('Trévi', 'Technical Advisor, Clerk', 'Conseiller Technique, Commis', 
+ 'Technical advisor in pool equipment, floor clerk, managed inventory, and organized backstore. Gained expertise in customer relations and operational management.', 
+ 'Conseiller technique en équipement de piscine, gestion d''inventaire et organisation de l''arrière-magasin.', 
+ '2020-06-01', '2022-11-30', 'Boucherville, QC');
 
--- Dummy Projects Data
+-- Projects Data
 INSERT INTO projects (title_en, title_fr, description_en, description_fr, image_url, github_link, live_link)
 VALUES 
-('E-Commerce Platform', 'Plateforme E-Commerce', 
- 'A full-featured online shopping platform with payment integration, inventory management, and real-time notifications.', 
- 'Une plateforme de shopping en ligne complète avec intégration de paiement et gestion d''inventaire.', 
- 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect width="400" height="300" fill="%23A8DADC"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="%23FFFFFF"%3EE-Commerce%3C/text%3E%3C/svg%3E', 
- 'https://github.com/example/ecommerce', 
- 'https://demo-ecommerce.example.com'),
+('External Client Project', 'Projet Client Externe', 
+ 'Leading a 5-member team to deliver a full-stack microservice-based web application with user portals, electronic signatures, document uploading, role-based access, and financial reports. September 2025 - February 2026. Technologies: Java, Spring Boot, React, MySQL, Docker, Auth0, Google Analytics API, Digital Ocean deployment.', 
+ 'Direction d''une équipe de 5 membres pour livrer une application web microservices avec portails utilisateur, signatures électroniques et rapports financiers. Technologies: Java, Spring Boot, React, MySQL, Docker.', 
+ 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect width="400" height="300" fill="%23A8DADC"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="%23FFFFFF"%3EClient Project%3C/text%3E%3C/svg%3E', 
+ 'https://github.com/LCDCI/Les-Constructions-Dominic-Cyr', 
+ 'https://constructions-dominiccyr.com/'),
  
-('Task Management App', 'Application de Gestion de Tâches', 
- 'A collaborative task management tool with real-time updates, drag-and-drop interface, and team collaboration features.', 
- 'Un outil de gestion de tâches collaboratif avec mises à jour en temps réel.', 
- 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect width="400" height="300" fill="%238FBDD4"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="%23FFFFFF"%3ETask Manager%3C/text%3E%3C/svg%3E', 
- 'https://github.com/example/taskmanager', 
- 'https://demo-tasks.example.com'),
+('Champlain Pet Clinic', 'Clinique Animale Champlain', 
+ 'Full-stack web application developed in collaboration with a 44-member team, focusing on customer profile microservice. September 2025 - November 2025. Technologies: Java, Spring Boot, React, MongoDB, Bootstrap, Docker, Postman.', 
+ 'Application web full-stack développée en collaboration avec une équipe de 44 membres sur le microservice de profil client. Technologies: Java, Spring Boot, React, MongoDB.', 
+ 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect width="400" height="300" fill="%238FBDD4"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="%23FFFFFF"%3EPet Clinic%3C/text%3E%3C/svg%3E', 
+ 'https://github.com/cgerard321/champlain_petclinic', 
+ 'https://petclinic.benmusicgeek.synology.me/home'),
+
+('E-Commerce Application', 'Application E-Commerce', 
+ 'Full CRUD e-commerce web application using PHP Laravel framework. April 2025 - May 2025. Features include database migration, Blade templating, role-based access control, and product management capabilities.', 
+ 'Application e-commerce complète avec système CRUD utilisant Laravel. Avril 2025 - Mai 2025. Inclut migration de base de données, accès basé sur les rôles et gestion des produits.', 
+ 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect width="400" height="300" fill="%23D4D9E0"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="%235A6C7D"%3EE-Commerce%3C/text%3E%3C/svg%3E', 
+ 'https://github.com/OlivieriD/Mini-ecommerce', 
+ NULL),
  
-('Weather Dashboard', 'Tableau de Bord Météo', 
- 'Interactive weather dashboard displaying forecasts, historical data, and weather alerts using modern data visualization.', 
- 'Tableau de bord météo interactif affichant les prévisions et les données historiques.', 
- 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect width="400" height="300" fill="%23D4D9E0"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="%235A6C7D"%3EWeather App%3C/text%3E%3C/svg%3E', 
- 'https://github.com/example/weather', 
- 'https://demo-weather.example.com'),
- 
-('Portfolio CMS', 'CMS Portfolio', 
- 'Content management system for portfolio websites with drag-and-drop page builder and SEO optimization.', 
- 'Système de gestion de contenu pour sites portfolio avec constructeur de pages.', 
- 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect width="400" height="300" fill="%23E8ECEF"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="%235A6C7D"%3EPortfolio CMS%3C/text%3E%3C/svg%3E', 
- 'https://github.com/example/cms', 
- 'https://demo-cms.example.com'),
- 
-('Social Media Analytics', 'Analytique Médias Sociaux', 
- 'Analytics dashboard for tracking social media engagement, growth trends, and audience insights across multiple platforms.', 
- 'Tableau de bord d''analyse pour suivre l''engagement sur les médias sociaux.', 
- 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect width="400" height="300" fill="%23A8DADC"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="%23FFFFFF"%3EAnalytics%3C/text%3E%3C/svg%3E', 
- 'https://github.com/example/analytics', 
- 'https://demo-analytics.example.com'),
- 
-('Recipe Finder', 'Trouveur de Recettes', 
- 'Recipe search engine with ingredient-based filtering, nutrition information, and meal planning capabilities.', 
- 'Moteur de recherche de recettes avec filtrage par ingrédients et informations nutritionnelles.', 
- 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect width="400" height="300" fill="%238FBDD4"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="%23FFFFFF"%3ERecipes%3C/text%3E%3C/svg%3E', 
- 'https://github.com/example/recipes', 
- 'https://demo-recipes.example.com');
+('Tic Tac Toe Game', 'Jeu Morpion', 
+ 'Interactive Tic-Tac-Toe game developed using WPF and C#. November 2024. Demonstrates expert proficiency in C#, object-oriented design, and rigorous testing practices with dynamic user interface.', 
+ 'Jeu Morpion interactif développé avec WPF et C#. Novembre 2024. Démontre la maîtrise de la conception orientée objet et des pratiques de test.', 
+ 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect width="400" height="300" fill="%23E8ECEF"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="%235A6C7D"%3ETic Tac Toe%3C/text%3E%3C/svg%3E', 
+ 'https://github.com/OlivieriD/Tic-Tac-Toe-game', 
+ NULL);
 
 -- Project Technologies
 INSERT INTO project_technologies (project_id, technology) VALUES
-(1, 'React'), (1, 'Spring Boot'), (1, 'PostgreSQL'), (1, 'Stripe API'), (1, 'Docker'),
-(2, 'React'), (2, 'Node.js'), (2, 'MongoDB'), (2, 'Socket.io'), (2, 'Redux'),
-(3, 'Vue.js'), (3, 'Express'), (3, 'Chart.js'), (3, 'OpenWeather API'), (3, 'Tailwind CSS'),
-(4, 'React'), (4, 'Spring Boot'), (4, 'MySQL'), (4, 'AWS S3'), (4, 'Material-UI'),
-(5, 'Angular'), (5, 'Python'), (5, 'Django'), (5, 'Redis'), (5, 'D3.js'),
-(6, 'React Native'), (6, 'Firebase'), (6, 'Spoonacular API'), (6, 'TypeScript');
+(1, 'Java'), (1, 'Spring Boot'), (1, 'React'), (1, 'MySQL'), (1, 'Docker'), (1, 'Auth0'), (1, 'Google Analytics API'), (1, 'Digital Ocean'),
+(2, 'Java'), (2, 'Spring Boot'), (2, 'React'), (2, 'MongoDB'), (2, 'Bootstrap'), (2, 'Docker'), (2, 'Postman'),
+(3, 'PHP'), (3, 'Laravel'), (3, 'MySQL'), (3, 'Blade'), (3, 'HTML/CSS'),
+(4, 'C#'), (4, 'WPF'), (4, 'Git'), (4, 'OOP'), (4, 'Testing');
 
--- Dummy Skills Data
+-- Skills Data
 INSERT INTO skills (name, proficiency, category) VALUES 
-('Java', 90, 'Backend'),
-('Spring Boot', 85, 'Backend'),
-('Python', 80, 'Backend'),
-('Node.js', 85, 'Backend'),
-('React', 90, 'Frontend'),
-('Vue.js', 75, 'Frontend'),
-('Angular', 70, 'Frontend'),
-('TypeScript', 85, 'Frontend'),
-('JavaScript', 95, 'Frontend'),
-('HTML/CSS', 90, 'Frontend'),
-('PostgreSQL', 85, 'Database'),
-('MongoDB', 80, 'Database'),
-('MySQL', 80, 'Database'),
-('Redis', 70, 'Database'),
-('Docker', 85, 'DevOps'),
-('Kubernetes', 70, 'DevOps'),
-('AWS', 75, 'DevOps'),
-('Git', 90, 'Tools'),
-('Jenkins', 75, 'DevOps'),
-('REST API', 90, 'Backend');
+-- Proficient Languages
+('C#', 85, 'Programming'),
+('Java', 85, 'Programming'),
+('SQL', 85, 'Database'),
+('T-SQL', 85, 'Database'),
+('JavaScript', 85, 'Programming'),
+('HTML', 85, 'Frontend'),
+('CSS', 85, 'Frontend'),
+('React', 85, 'Frontend'),
+-- Known Languages
+('Python', 70, 'Programming'),
+('PHP', 75, 'Programming'),
+('Node.js', 70, 'Backend'),
+('Bootstrap', 70, 'Frontend'),
+('Kotlin', 65, 'Programming'),
+('C++', 65, 'Programming'),
+-- Technologies & Tools
+('Spring Boot', 85, 'Framework'),
+('Azure DevOps', 85, 'DevOps'),
+('CI/CD Pipeline', 80, 'DevOps'),
+('Docker', 80, 'DevOps'),
+('Git', 85, 'Tools'),
+('Visual Studio Code', 85, 'Tools'),
+('Visual Studio 2022', 80, 'Tools'),
+('JetBrains Suite', 80, 'Tools'),
+('Postman', 80, 'Tools'),
+('Jira', 75, 'Tools'),
+('PlantUML', 75, 'Tools'),
+('Canva', 70, 'Tools'),
+-- Databases
+('MySQL', 85, 'Database'),
+('PostgreSQL', 75, 'Database'),
+('SSMS', 80, 'Database'),
+('MongoDB', 75, 'Database'),
+('H2', 70, 'Database'),
+('MySQL Workbench', 80, 'Database'),
+('PhpMyAdmin', 75, 'Database'),
+-- Methodologies & Concepts
+('SCRUM', 85, 'Methodology'),
+('Agile Development', 85, 'Methodology'),
+('System Analysis and Design', 80, 'Methodology'),
+('Object-Oriented Programming', 85, 'Concepts'),
+('Reactive Programming', 75, 'Concepts'),
+('Full-stack Development', 85, 'Concepts'),
+('RESTful Microservices', 80, 'Concepts'),
+('Unit Testing', 80, 'Testing'),
+('Integration Testing', 75, 'Testing'),
+('Repository Testing', 70, 'Testing'),
+('Service Testing', 75, 'Testing'),
+('AWS', 70, 'Cloud'),
+('Azure', 75, 'Cloud');
 
--- Dummy Testimonials Data
+-- Testimonials Data
 INSERT INTO testimonials (author_name, content, approved)
 VALUES 
-('Sarah Johnson', 'Outstanding developer! Delivered our project ahead of schedule with exceptional quality. Highly recommend for any complex web development needs.', true),
-('Michael Chen', 'Professional, reliable, and incredibly skilled. The attention to detail and problem-solving abilities are top-notch.', true),
-('Emily Rodriguez', 'Working with this developer was a pleasure. Great communication, creative solutions, and excellent code quality throughout the project.', true),
-('David Thompson', 'Exceeded all expectations! The final product was even better than we envisioned. Will definitely work together again.', true);
+('Team Lead - Client Project', 'Olivier demonstrated exceptional leadership and technical expertise while leading our microservices project. His ability to communicate complex concepts and manage team dynamics resulted in a successful delivery ahead of schedule.', true),
+('Professor - Champlain College', 'Outstanding student with strong grasp of software engineering principles. Olivier''s dedication to SCRUM methodologies and quality testing practices sets him apart from peers.', true),
+('Peer Developer - Pet Clinic Project', 'Working with Olivier on the microservices project was productive. Great teamwork, solid understanding of Spring Boot and React, and always willing to help teammates troubleshoot issues.', true),
+('Manager - Lulu Bistro', 'Olivier is a reliable and professional team member with excellent customer service skills and initiative. Shows strong organizational abilities and leadership potential in his roles.', true);
 
--- Dummy Education Data
+-- Education Data
 INSERT INTO education (school_en, school_fr, degree_en, degree_fr, field_of_study_en, field_of_study_fr, start_date, end_date, gpa)
 VALUES 
-('Massachusetts Institute of Technology', 'Institut de Technologie du Massachusetts', 
- 'Master of Science', 'Maîtrise en Sciences', 
+('Champlain College', 'Collège Champlain', 
+ 'Diploma in Computer Science', 'Diplôme en Informatique', 
  'Computer Science', 'Informatique', 
- '2020-09-01', '2022-05-15', 3.9),
+ '2022-09-01', '2026-05-31', NULL),
  
-('University of California, Berkeley', 'Université de Californie, Berkeley', 
- 'Bachelor of Science', 'Baccalauréat en Sciences', 
- 'Software Engineering', 'Génie Logiciel', 
- '2016-09-01', '2020-05-20', 3.8),
- 
-('Online Certification', 'Certification en Ligne', 
- 'Full Stack Web Development', 'Développement Web Full Stack', 
- 'MERN Stack', 'Stack MERN', 
- '2019-01-01', '2019-06-30', NULL);
+('Collège Charles-Lemoyne', 'Collège Charles-Lemoyne', 
+ 'Diploma', 'Diplôme', 
+ 'Arts et multimédia - PE+ Program', 'Arts et multimédia - Programme PE+', 
+ '2017-09-01', '2022-06-30', NULL);
 
--- Dummy Hobbies Data
+-- Hobbies Data (Interests from CV)
 INSERT INTO hobbies (name_en, name_fr, description_en, description_fr, icon_url)
 VALUES 
-('Photography', 'Photographie', 'Capturing moments and landscapes through the lens.', 'Capturer des moments et des paysages à travers l''objectif.', '📷'),
-('Open Source', 'Open Source', 'Contributing to open source projects and community.', 'Contribuer aux projets open source et à la communauté.', '💻'),
-('Hiking', 'Randonnée', 'Exploring nature trails and mountain peaks.', 'Explorer les sentiers naturels et les sommets montagneux.', '🏔️'),
-('Gaming', 'Jeux Vidéo', 'Strategy and puzzle games enthusiast.', 'Passionné de jeux de stratégie et de puzzle.', '🎮');
+('Hockey', 'Hockey', 'Passionate about ice hockey and staying active on the ice.', 'Passionné de hockey sur glace et activités sportives.', '🏒'),
+('Golf', 'Golf', 'Enjoy playing golf and the outdoors.', 'Amateur de golf et des activités en plein air.', '⛳'),
+('Football', 'Football', 'Interest in American football and soccer.', 'Intérêt pour le football américain et le soccer.', '🏈'),
+('Soccer', 'Soccer', 'Active player and enthusiast of soccer.', 'Joueur actif et enthousiaste du soccer.', '⚽'),
+('Baseball', 'Baseball', 'Baseball fan and occasional player.', 'Amateur de baseball et joueur occasionnel.', '⚾');
+
+-- About Section Data
+INSERT INTO about (content_en, content_fr)
+VALUES 
+('I am a Computer Science student with over 5 years of customer service experience, skilled in team leadership and effective communication, looking for a 3-month internship starting March 2026. I aim to merge my technical expertise with strong interpersonal skills to make a meaningful impact on colleagues and employers.',
+ 'Je suis un étudiant en informatique avec plus de 5 ans d''expérience en service à la clientèle, compétent en leadership d''équipe et en communication efficace, à la recherche d''un stage de 3 mois débutant en mars 2026. Je vise à fusionner mon expertise technique avec de solides compétences interpersonnelles pour avoir un impact significatif sur mes collègues et employeurs.');

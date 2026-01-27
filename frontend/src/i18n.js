@@ -17,6 +17,8 @@ i18n.use(initReactI18next).init({
                 // Home Page
                 home_title: "My Portfolio",
                 home_subtitle: "Welcome to my professional portfolio",
+                about_me_text: "I am a Computer Science student with over 5 years of customer service experience, skilled in team leadership and effective communication, looking for a 3-month internship starting March 2026. I aim to merge my technical expertise with strong interpersonal skills to make a meaningful impact on colleagues and employers.",
+                hobbies_title: "Hobbies & Interests",
                 
                 // Projects
                 projects_title: "Projects",
@@ -121,6 +123,8 @@ i18n.use(initReactI18next).init({
                 // Home Page
                 home_title: "Mon Portfolio",
                 home_subtitle: "Bienvenue sur mon portfolio professionnel",
+                about_me_text: "Je suis un étudiant en informatique avec plus de 5 ans d'expérience en service à la clientèle, compétent en leadership d'équipe et en communication efficace, à la recherche d'un stage de 3 mois débutant en mars 2026. Je vise à fusionner mon expertise technique avec de solides compétences interpersonnelles pour avoir un impact significatif sur mes collègues et employeurs.",
+                hobbies_title: "Loisirs et intérêts",
                 
                 // Projects
                 projects_title: "Projets",

@@ -25,7 +25,10 @@ const ExperienceView = ({ limit }) => {
                         <h3>{exp.company}</h3>
                         <p className="role">{tData(exp.roleEn, exp.roleFr)}</p>
                         <p className="description">{tData(exp.descriptionEn, exp.descriptionFr)}</p>
-                        <span className="date-tag">{exp.startDate} - {exp.endDate || t('experience_present')}</span>
+                        <p className="location">{exp.location}</p>
+                        <span className="date-tag">
+                            {new Date(exp.startDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })} - {exp.endDate ? new Date(exp.endDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short' }) : t('experience_present')}
+                        </span>
                     </div>
                 ))
             ) : (

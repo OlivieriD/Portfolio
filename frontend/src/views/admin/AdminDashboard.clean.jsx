@@ -12,6 +12,7 @@ import AdminTable from '../../components/admin/AdminTable';
 import AdminModal from '../../components/admin/AdminModal';
 import ConfirmModal from '../../components/common/ConfirmModal';
 import AppManagement from './AppManagement';
+import AboutManagement from '../../components/admin/AboutManagement';
 import '../../styles/AdminDashboard.css';
 
 const AdminDashboard = () => {
@@ -125,6 +126,7 @@ const AdminDashboard = () => {
 
   const tabs = [
     { key: 'app-management', label: t('admin_app_management') },
+    { key: 'about', label: 'About Section' },
     { key: 'projects', label: t('admin_projects') },
     { key: 'skills', label: t('admin_skills') },
     { key: 'experiences', label: t('admin_experiences') },
@@ -151,6 +153,7 @@ const AdminDashboard = () => {
 
       <Routes>
         <Route path="app-management" element={<AppManagement />} />
+        <Route path="about" element={<AboutManagement />} />
         <Route
           path=":section"
           element={

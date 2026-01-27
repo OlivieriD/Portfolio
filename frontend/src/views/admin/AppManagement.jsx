@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
+import { BarChart3, Zap, Lock, Palette, Rocket } from 'lucide-react';
 import '../../styles/AdminDashboard.css';
 
 const AppManagement = () => {
@@ -16,7 +17,9 @@ const AppManagement = () => {
 
             <div className="management-grid">
                 <div className="info-card">
-                    <div className="card-icon">📊</div>
+                    <div className="card-icon">
+                        <BarChart3 size={32} strokeWidth={1.5} />
+                    </div>
                     <h3>Portfolio Management</h3>
                     <p>Use the sidebar to manage different sections of your portfolio:</p>
                     <ul className="feature-list">
@@ -30,7 +33,9 @@ const AppManagement = () => {
                 </div>
 
                 <div className="info-card">
-                    <div className="card-icon">⚡</div>
+                    <div className="card-icon">
+                        <Zap size={32} strokeWidth={1.5} />
+                    </div>
                     <h3>Quick Actions</h3>
                     <p>All changes you make will:</p>
                     <ul className="feature-list">
@@ -42,7 +47,9 @@ const AppManagement = () => {
                 </div>
 
                 <div className="info-card">
-                    <div className="card-icon">🔒</div>
+                    <div className="card-icon">
+                        <Lock size={32} strokeWidth={1.5} />
+                    </div>
                     <h3>Security</h3>
                     <p>Your admin account is protected:</p>
                     <ul className="feature-list">
@@ -54,7 +61,9 @@ const AppManagement = () => {
                 </div>
 
                 <div className="info-card">
-                    <div className="card-icon">🎨</div>
+                    <div className="card-icon">
+                        <Palette size={32} strokeWidth={1.5} />
+                    </div>
                     <h3>Design Theme</h3>
                     <p>Consistent pale color aesthetic:</p>
                     <ul className="feature-list">
@@ -64,11 +73,6 @@ const AppManagement = () => {
                         <li>✓ Professional typography</li>
                     </ul>
                 </div>
-            </div>
-
-            <div className="getting-started">
-                <h2>🚀 Getting Started</h2>
-                <p>Click any tab in the sidebar to begin managing your portfolio content. All forms support bilingual content (English/French) to reach a wider audience.</p>
             </div>
         </div>
     );
