@@ -1,14 +1,54 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import ExperienceView from './ExperienceView';
-import EducationView from './EducationView';
-import SkillView from './SkillView';
-import ProjectView from './ProjectView';
-import ContactView from './ContactView';
+import { FolderOpen , Lightbulb , Briefcase, GraduationCap, Mail, MessageSquareQuote  } from 'lucide-react';
 
 const HomeView = () => {
     const { t } = useTranslation();
+    
+    const sections = [
+        {
+            id: 'projects',
+            title: t('projects_title'),
+            icon: FolderOpen ,
+            path: '/projects',
+            bgClass: 'bg-white'
+        },
+        {
+            id: 'skills',
+            title: t('skills_title'),
+            icon: Lightbulb ,
+            path: '/skills',
+            bgClass: 'bg-gray'
+        },
+        {
+            id: 'experience',
+            title: t('experience_title'),
+            icon: Briefcase,
+            path: '/experience',
+            bgClass: 'bg-white'
+        },
+        {
+            id: 'education',
+            title: t('education_title'),
+            icon: GraduationCap,
+            path: '/education',
+            bgClass: 'bg-gray'
+        },
+        {
+            id: 'contact',
+            title: t('contact_title'),
+            icon: Mail,
+            path: '/contact',
+            bgClass: 'bg-white'
+        },
+        {
+            id: 'testimonials',
+            title: t('testimonials_title'),
+            icon: MessageSquareQuote,
+            path: '/testimonials',
+            bgClass: 'bg-gray'
+        }
+    ];
     
     return (
         <div className="home-container">
@@ -17,51 +57,23 @@ const HomeView = () => {
                 <p className="hero-subtitle">{t('home_subtitle')}</p>
             </header>
 
-            <section className="section-wrapper" id="projects">
-                <h2>{t('projects_title')}</h2>
-                <div className="section-content">
-                    <ProjectView limit={1} />
-                </div>
-                <div className="view-more-container">
-                    <Link to="/projects" className="view-more-btn">{t('view_more')}</Link>
-                </div>
-            </section>
-
-            <section className="section-wrapper" id="skills">
-                <h2>{t('skills_title')}</h2>
-                <div className="section-content">
-                    <SkillView limit={1} />
-                </div>
-                <div className="view-more-container">
-                    <Link to="/skills" className="view-more-btn">{t('view_more')}</Link>
-                </div>
-            </section>
-
-            <section className="section-wrapper" id="experience">
-                <h2>{t('experience_title')}</h2>
-                <div className="section-content">
-                    <ExperienceView limit={1} />
-                </div>
-                <div className="view-more-container">
-                    <Link to="/experience" className="view-more-btn">{t('view_more')}</Link>
-                </div>
-            </section>
-
-            <section className="section-wrapper" id="education">
-                <h2>{t('education_title')}</h2>
-                <div className="section-content">
-                    <EducationView limit={1} />
-                </div>
-                <div className="view-more-container">
-                    <Link to="/education" className="view-more-btn">{t('view_more')}</Link>
-                </div>
-            </section>
-
-            <section className="section-wrapper" id="contact">
-                <h2>{t('contact_title')}</h2>
-                <div className="section-content">
-                    <ContactView />
-                </div>
+            <section className="sections-grid">
+                {sections.map((section) => {
+                    const IconComponent = section.icon;
+                    return (
+                        <Link 
+                            key={section.id}
+                            to={section.path} 
+                            className={`section-card ${section.bgClass}`}
+                        >
+                            <div className="section-icon">
+                                <IconComponent size={48} strokeWidth={1.5} />
+                            </div>
+                            <h3 className="section-title">{section.title}</h3>
+                            <span className="view-more-text">{t('view_more')}</span>
+                        </Link>
+                    );
+                })}
             </section>
         </div>
     );
