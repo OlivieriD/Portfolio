@@ -31,7 +31,7 @@ public class ResumeController {
     public ResponseEntity<Resource> downloadResume() {
         return resumeService.getLatestResume()
                 .map(resume -> {
-                    ByteArrayResource resource = new ByteArrayResource(resume.getData());
+                    Resource resource = new ByteArrayResource(resume.getData());
                     return ResponseEntity.ok()
                             .contentType(MediaType.parseMediaType(resume.getFileType()))
                             .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resume.getFilename() + "\"")
@@ -45,7 +45,7 @@ public class ResumeController {
     public ResponseEntity<Resource> viewResume() {
         return resumeService.getLatestResume()
                 .map(resume -> {
-                    ByteArrayResource resource = new ByteArrayResource(resume.getData());
+                    Resource resource = new ByteArrayResource(resume.getData());
                     return ResponseEntity.ok()
                             .contentType(MediaType.parseMediaType(resume.getFileType()))
                             .header(HttpHeaders.CONTENT_DISPOSITION, "inline; filename=\"" + resume.getFilename() + "\"")

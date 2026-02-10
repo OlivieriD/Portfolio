@@ -18,5 +18,7 @@ public class Testimonial {
     private Integer id;
     private String authorName;
     private String content;
+
+    @Builder.Default
     private Boolean approved = false;
 }
