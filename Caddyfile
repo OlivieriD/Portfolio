@@ -3,15 +3,20 @@
 }
 
 # HTTP fallback to ensure the site reachable even if SSL is rate-limited
-http://olivierdportfolio.me {
+http://olivierdportfolio.me, http://www.olivierdportfolio.me {
     handle /api/* {
         reverse_proxy backend:8080
     }
-    reverse_proxy frontend:80
+    reverse_proxy /* {
+        reverse_proxy frontend:80
+    }
 }
 
-olivierdportfolio.me {
+olivierdportfolio.me, www.olivierdportfolio.me {
     tls {
+        issuer google {
+            # This uses Google Trust Services
+        }
         issuer zerossl
     }
     
