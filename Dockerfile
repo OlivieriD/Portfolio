@@ -7,4 +7,4 @@ RUN gradle build -x test --no-daemon
 FROM eclipse-temurin:21-jre-jammy
 EXPOSE 8080
 COPY --from=build /home/gradle/src/build/libs/*SNAPSHOT.jar app.jar
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+ENTRYPOINT ["java", "-jar", "/app.jar"]git diff docker-compose.yml
