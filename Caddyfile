@@ -2,12 +2,19 @@
     email olivieri.dominic@proton.me
 }
 
+# HTTP fallback to ensure the site reachable even if SSL is rate-limited
+http://olivierdportfolio.me {
+    handle /api/* {
+        reverse_proxy backend:8080
+    }
+    reverse_proxy frontend:80
+}
+
 olivierdportfolio.me {
-    # Force ZeroSSL to bypass Let's Encrypt rate limit
     tls {
         issuer zerossl
     }
-
+    
     # Route API requests to the backend container
     handle /api/* {
         reverse_proxy backend:8080
