@@ -2,8 +2,8 @@
     email olivieri.dominic@proton.me
 }
 
-# Simplified configuration for Cloudflare
-# Set Cloudflare SSL/TLS mode to "Flexible"
+# Ultimate Cloudflare-Friendly Config
+# Put Cloudflare SSL/TLS to "Flexible"
 :80, http://olivierdportfolio.me, http://www.olivierdportfolio.me, http://localhost {
     # Route API requests to the backend container
     handle /api/* {
