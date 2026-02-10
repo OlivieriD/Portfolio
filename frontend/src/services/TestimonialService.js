@@ -1,6 +1,6 @@
 import axiosInstance from '../api/axiosInstance';
 
-const SUBDOMAIN = '/testimonials';
+const SUBDOMAIN = 'testimonials';
 
 export const TestimonialService = {
     // Public: only gets approved ones

@@ -1,5 +1,5 @@
 import axiosInstance from '../api/axiosInstance';
-const SUBDOMAIN = '/education';
+const SUBDOMAIN = 'education';
 
 export const EducationService = {
     getAll: () => axiosInstance.get(SUBDOMAIN),

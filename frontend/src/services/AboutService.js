@@ -1,6 +1,6 @@
 import axiosInstance from '../api/axiosInstance';
 
-const SUBDOMAIN = '/about';
+const SUBDOMAIN = 'about';
 
 export const AboutService = {
     getAbout: () => axiosInstance.get(SUBDOMAIN),

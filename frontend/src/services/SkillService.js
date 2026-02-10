@@ -1,5 +1,5 @@
 import axiosInstance from '../api/axiosInstance';
-const SUBDOMAIN = '/skills';
+const SUBDOMAIN = 'skills';
 
 export const SkillService = {
     getAll: () => axiosInstance.get(SUBDOMAIN),

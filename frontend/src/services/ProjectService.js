@@ -1,6 +1,6 @@
 import axiosInstance from '../api/axiosInstance';
 
-const SUBDOMAIN = '/projects';
+const SUBDOMAIN = 'projects';
 
 export const ProjectService = {
     getAll: () => axiosInstance.get(SUBDOMAIN),

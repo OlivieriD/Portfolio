@@ -1,6 +1,6 @@
 import axiosInstance from '../api/axiosInstance';
 
-const SUBDOMAIN = '/experiences';
+const SUBDOMAIN = 'experiences';
 
 export const ExperienceService = {
     getAll: () => axiosInstance.get(SUBDOMAIN),
