@@ -1,9 +1,13 @@
 {
-    # Use ZeroSSL as a fallback because of Let's Encrypt rate limits
     email olivieri.dominic@proton.me
 }
 
 olivierdportfolio.me {
+    # Force ZeroSSL to bypass Let's Encrypt rate limit
+    tls {
+        issuer zerossl
+    }
+
     # Route API requests to the backend container
     handle /api/* {
         reverse_proxy backend:8080
