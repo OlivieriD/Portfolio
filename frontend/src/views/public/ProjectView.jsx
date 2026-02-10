@@ -20,7 +20,7 @@ const ProjectView = ({ limit }) => {
 
     return (
         <div className="projects-list">
-            {projects.length > 0 ? (
+            {Array.isArray(projects) && projects.length > 0 ? (
                 projects.map((project, index) => (
                     <div key={project.id} className={`project-row ${index % 2 === 0 ? 'left' : 'right'}`}>
                         {project.imageUrl && (

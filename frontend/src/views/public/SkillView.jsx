@@ -29,7 +29,7 @@ const SkillView = ({ limit }) => {
 
     return (
         <div className="skills-grid">
-            {skills.length > 0 ? (
+            {Array.isArray(skills) && skills.length > 0 ? (
                 skills.map(skill => {
                     const IconComponent = getIconForCategory(skill.category);
                     return (

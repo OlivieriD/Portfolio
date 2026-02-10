@@ -117,7 +117,7 @@ const HomeView = () => {
                 })}
             </section>
 
-            {hobbies.length > 0 && (
+            {Array.isArray(hobbies) && hobbies.length > 0 && (
                 <section className="hobbies-section">
                     <h2 className="hobbies-title">{t('hobbies_title') || 'Hobbies & Interests'}</h2>
                     <div className="hobbies-grid">
