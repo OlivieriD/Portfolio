@@ -1,3 +1,8 @@
+{
+    # Use ZeroSSL as a fallback because of Let's Encrypt rate limits
+    email olivieri.dominic@proton.me
+}
+
 olivierdportfolio.me {
     # Route API requests to the backend container
     handle /api/* {
