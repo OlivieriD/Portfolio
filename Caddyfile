@@ -1,0 +1,9 @@
+olivierdportfolio.me {
+    # Route API requests to the backend container
+    handle /api/* {
+        reverse_proxy backend:8080
+    }
+
+    # Route everything else to the frontend container
+    reverse_proxy frontend:80
+}
