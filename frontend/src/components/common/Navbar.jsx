@@ -55,7 +55,7 @@ const Navbar = () => {
                     {currentLang.toUpperCase()}
                 </button>
                 {isAuthenticated ? (
-                    <button className="admin-pill" onClick={() => { logout(); closeMenu(); }}>Logout</button>
+                    <button className="admin-pill" onClick={() => { logout({ logoutParams: { returnTo: window.location.origin } }); closeMenu(); }}>Logout</button>
                 ) : (
                     <button className="admin-pill" onClick={() => { loginWithRedirect(); closeMenu(); }}>Login</button>
                 )}

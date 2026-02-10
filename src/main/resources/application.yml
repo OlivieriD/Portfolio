@@ -25,8 +25,9 @@ spring:
 
   sql:
     init:
-      # 'always' ensures your dummy data loads every time you start the container
-      mode: never
+      # Use 'always' if you want data.sql to run every time (good for dev)
+      # Use 'never' if you only want it to run when the DB is empty (good for production after first run)
+      mode: always
 
   servlet:
     multipart:
