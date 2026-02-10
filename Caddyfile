@@ -4,7 +4,7 @@
 
 # Simplified configuration for Cloudflare
 # Set Cloudflare SSL/TLS mode to "Flexible"
-http://olivierdportfolio.me, http://www.olivierdportfolio.me, http://localhost {
+:80, http://olivierdportfolio.me, http://www.olivierdportfolio.me, http://localhost {
     # Route API requests to the backend container
     handle /api/* {
         reverse_proxy backend:8080
