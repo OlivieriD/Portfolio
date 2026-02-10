@@ -10,10 +10,20 @@ const ResumeSection = () => {
     useEffect(() => {
         ResumeService.getInfo()
             .then(res => setResumeInfo(res.data))
-            .catch(() => setResumeInfo(null));
+            .catch((err) => {
+                console.error("Resume info error:", err);
+                setResumeInfo(null);
+            });
     }, []);
 
-    if (!resumeInfo) return null;
+    // Return dummy component if not found so you can confirm it renders
+    if (!resumeInfo) {
+        return (
+            <div style={{ padding: '1rem', color: '#888', fontStyle: 'italic' }}>
+                {t('no_resume_available') || 'Resume currently unavailable.'}
+            </div>
+        );
+    }
 
     return (
         <div className="resume-section" style={{ textAlign: 'center', margin: '2rem 0', padding: '1rem', background: 'rgba(255,255,255,0.5)', borderRadius: '12px' }}>

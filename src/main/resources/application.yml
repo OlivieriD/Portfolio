@@ -26,7 +26,7 @@ spring:
   sql:
     init:
       # 'always' ensures your dummy data loads every time you start the container
-      mode: always
+      mode: never
 
   servlet:
     multipart:
