@@ -20,6 +20,6 @@ public class Resume {
     private String filename;
     private String fileType;
 
-    @Lob
+    @Column(name = "data", columnDefinition = "BYTEA")
     private byte[] data;
 }

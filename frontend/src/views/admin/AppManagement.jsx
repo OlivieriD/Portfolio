@@ -36,7 +36,10 @@ const AppManagement = () => {
         try {
             await ResumeService.upload(formData);
             setMessage({ type: 'success', text: 'Resume uploaded successfully!' });
-            fetchResumeInfo();
+            // Add a slight delay to allow the DB to flush before reloading
+            setTimeout(() => {
+                fetchResumeInfo();
+            }, 500);
         } catch (err) {
             setMessage({ type: 'error', text: 'Failed to upload resume.' });
         } finally {
