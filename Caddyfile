@@ -2,24 +2,9 @@
     email olivieri.dominic@proton.me
 }
 
-# HTTP fallback to ensure the site reachable even if SSL is rate-limited
-http://olivierdportfolio.me, http://www.olivierdportfolio.me {
-    handle /api/* {
-        reverse_proxy backend:8080
-    }
-    reverse_proxy /* {
-        reverse_proxy frontend:80
-    }
-}
-
-olivierdportfolio.me, www.olivierdportfolio.me {
-    tls {
-        issuer google {
-            # This uses Google Trust Services
-        }
-        issuer zerossl
-    }
-    
+# Simplified configuration for Cloudflare
+# Set Cloudflare SSL/TLS mode to "Flexible"
+http://olivierdportfolio.me, http://www.olivierdportfolio.me, http://localhost {
     # Route API requests to the backend container
     handle /api/* {
         reverse_proxy backend:8080
