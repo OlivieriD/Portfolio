@@ -3,7 +3,6 @@ package com.od.portfolio.SkillSubdomain.PresentationLayer;
 import com.od.portfolio.SkillSubdomain.BusinessLayer.SkillService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,14 +17,11 @@ public class SkillController {
     public List<SkillResponseDTO> getAll() { return skillService.getAll(); }
 
     @PostMapping
-    @PreAuthorize("hasAuthority('SCOPE_admin')")
     public SkillResponseDTO create(@Valid @RequestBody SkillRequestDTO dto) { return skillService.add(dto); }
 
     @PutMapping("/{id}")
-    @PreAuthorize("hasAuthority('SCOPE_admin')")
     public SkillResponseDTO update(@PathVariable Integer id, @Valid @RequestBody SkillRequestDTO dto) { return skillService.update(id, dto); }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAuthority('SCOPE_admin')")
     public void delete(@PathVariable Integer id) { skillService.delete(id); }
 }

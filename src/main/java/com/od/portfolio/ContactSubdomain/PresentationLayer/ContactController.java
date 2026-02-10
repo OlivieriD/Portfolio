@@ -5,7 +5,6 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,13 +23,11 @@ public class ContactController {
     }
 
     @GetMapping
-    @PreAuthorize("hasAuthority('SCOPE_admin')")
     public ResponseEntity<List<MessageResponseDTO>> getAllMessages() {
         return ResponseEntity.ok(messageService.getAllMessages());
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAuthority('SCOPE_admin')")
     public ResponseEntity<Void> deleteMessage(@PathVariable Integer id) {
         messageService.deleteMessage(id);
         return ResponseEntity.noContent().build();

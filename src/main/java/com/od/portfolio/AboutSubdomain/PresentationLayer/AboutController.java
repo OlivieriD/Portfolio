@@ -3,7 +3,6 @@ package com.od.portfolio.AboutSubdomain.PresentationLayer;
 import com.od.portfolio.AboutSubdomain.BusinessLayer.AboutService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -20,7 +19,6 @@ public class AboutController {
     }
 
     @PutMapping
-    @PreAuthorize("hasAuthority('SCOPE_admin')")
     public ResponseEntity<AboutResponseDTO> updateAbout(@RequestBody AboutRequestDTO dto) {
         return ResponseEntity.ok(aboutService.updateAbout(dto));
     }

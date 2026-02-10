@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-    baseURL: import.meta.env.VITE_API_BASE_URL || '/api/v1',
+    baseURL: import.meta.env.VITE_API_BASE_URL || '/api/v1/',
 });
 
 export const injectToken = (getAccessTokenSilently) => {
@@ -10,6 +10,7 @@ export const injectToken = (getAccessTokenSilently) => {
             const token = await getAccessTokenSilently();
             config.headers.Authorization = `Bearer ${token}`;
         } catch (error) {
+            console.error("Token injection failed:", error);
             // Non-authenticated request (Public GETs)
         }
         return config;

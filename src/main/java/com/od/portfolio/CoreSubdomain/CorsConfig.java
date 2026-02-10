@@ -19,7 +19,8 @@ public class CorsConfig {
             "http://localhost:3000",
             "http://localhost:5173",
             "http://localhost:5174",
-            "http://localhost:80"
+            "http://localhost:80",
+            "https://olivierdportfolio.me"
         ));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("*"));
