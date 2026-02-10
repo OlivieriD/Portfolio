@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { FolderOpen , Lightbulb , Briefcase, GraduationCap, Mail, MessageSquareQuote, Trophy, Flag, CircleDot, Medal, Target } from 'lucide-react';
 import { AboutService } from '../../services/AboutService';
 import { HobbyService } from '../../services/HobbyService';
+import { ResumeService } from '../../services/ResumeService';
+import ResumeSection from '../../components/public/ResumeSection';
 import { useLanguage } from '../../hooks/useLanguage';
 
 const HomeView = () => {
@@ -96,6 +98,7 @@ const HomeView = () => {
                 <p className="about-text">
                     {aboutContent}
                 </p>
+                <ResumeSection />
             </section>
 
             <section className="sections-grid">

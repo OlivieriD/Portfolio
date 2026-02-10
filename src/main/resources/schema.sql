@@ -77,3 +77,10 @@ CREATE TABLE IF NOT EXISTS about (
     content_en TEXT NOT NULL,
     content_fr TEXT NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS resumes (
+    id SERIAL PRIMARY KEY,
+    filename VARCHAR(255) NOT NULL,
+    file_type VARCHAR(100) NOT NULL,
+    data BYTEA NOT NULL
+);

@@ -28,6 +28,11 @@ spring:
       # 'always' ensures your dummy data loads every time you start the container
       mode: always
 
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
 # Logging for debugging (Optional but helpful during initial setup)
 logging:
   level:
