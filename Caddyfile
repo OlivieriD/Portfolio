@@ -2,7 +2,6 @@
     email olivieri.dominic@proton.me
 }
 
-# Handle both HTTP and HTTPS
 olivierdportfolio.me, www.olivierdportfolio.me {
     # Route API requests to the backend container
     handle /api/* {
@@ -11,9 +10,4 @@ olivierdportfolio.me, www.olivierdportfolio.me {
 
     # Route everything else to the frontend container
     reverse_proxy frontend:80
-}
-
-# Redirect HTTP to HTTPS
-:80 {
-    redir https://{host}{uri} permanent
 }
