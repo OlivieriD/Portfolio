@@ -1,6 +1,7 @@
 package com.od.portfolio.TestimonialSubdomain.PresentationLayer;
 
 import com.od.portfolio.TestimonialSubdomain.BusinessLayer.TestimonialService;
+import com.od.portfolio.TestimonialSubdomain.DataAccessLayer.Testimonial;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,8 +30,8 @@ public class TestimonialController {
     }
 
     @PatchMapping("/{id}/approve") // Admin approval toggle
-    public ResponseEntity<TestimonialResponseDTO> updateStatus(@PathVariable Integer id, @RequestParam boolean approved) {
-        return ResponseEntity.ok(testimonialService.updateApprovalStatus(id, approved));
+    public ResponseEntity<TestimonialResponseDTO> updateStatus(@PathVariable Integer id, @RequestParam Testimonial.ApprovalStatus status) {
+        return ResponseEntity.ok(testimonialService.updateApprovalStatus(id, status));
     }
 
     @DeleteMapping("/{id}")

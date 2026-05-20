@@ -16,7 +16,10 @@ public class TestimonialServiceImpl implements TestimonialService {
     private final TestimonialMapper mapper;
 
     public List<TestimonialResponseDTO> getAllApproved() {
-        return repository.findAllByApprovedTrue().stream().map(mapper::entityToResponseDTO).toList();
+        return repository.findAllByApprovalStatus(Testimonial.ApprovalStatus.APPROVED)
+                .stream()
+                .map(mapper::entityToResponseDTO)
+                .toList();
     }
 
     public List<TestimonialResponseDTO> getAll() {
@@ -25,15 +28,17 @@ public class TestimonialServiceImpl implements TestimonialService {
 
     public TestimonialResponseDTO create(TestimonialRequestDTO dto) {
         Testimonial t = mapper.requestDTOToEntity(dto);
-        t.setApproved(false);
+        t.setApprovalStatus(Testimonial.ApprovalStatus.PENDING);
         return mapper.entityToResponseDTO(repository.save(t));
     }
 
-    public TestimonialResponseDTO updateApprovalStatus(Integer id, boolean status) {
+    public TestimonialResponseDTO updateApprovalStatus(Integer id, Testimonial.ApprovalStatus status) {
         Testimonial t = repository.findById(id).orElseThrow();
-        t.setApproved(status);
+        t.setApprovalStatus(status);
         return mapper.entityToResponseDTO(repository.save(t));
     }
 
-    public void delete(Integer id) { repository.deleteById(id); }
+    public void delete(Integer id) { 
+        repository.deleteById(id); 
+    }
 }

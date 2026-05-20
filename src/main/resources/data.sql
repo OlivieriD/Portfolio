@@ -129,20 +129,20 @@ INSERT INTO skills (name, proficiency, category) SELECT 'AWS', 70, 'Cloud' WHERE
 INSERT INTO skills (name, proficiency, category) SELECT 'Azure', 75, 'Cloud' WHERE NOT EXISTS (SELECT 1 FROM skills WHERE name = 'Azure');
 
 -- Testimonials Data
-INSERT INTO testimonials (author_name, content, approved)
-SELECT 'Team Lead - Client Project', 'Olivier demonstrated exceptional leadership and technical expertise while leading our microservices project. His ability to communicate complex concepts and manage team dynamics resulted in a successful delivery ahead of schedule.', true
+INSERT INTO testimonials (author_name, content, approval_status)
+SELECT 'Team Lead - Client Project', 'Olivier demonstrated exceptional leadership and technical expertise while leading our microservices project. His ability to communicate complex concepts and manage team dynamics resulted in a successful delivery ahead of schedule.', 'APPROVED'
 WHERE NOT EXISTS (SELECT 1 FROM testimonials WHERE author_name = 'Team Lead - Client Project' AND content = 'Olivier demonstrated exceptional leadership and technical expertise while leading our microservices project. His ability to communicate complex concepts and manage team dynamics resulted in a successful delivery ahead of schedule.');
 
-INSERT INTO testimonials (author_name, content, approved)
-SELECT 'Professor - Champlain College', 'Outstanding student with strong grasp of software engineering principles. Olivier''s dedication to SCRUM methodologies and quality testing practices sets him apart from peers.', true
+INSERT INTO testimonials (author_name, content, approval_status)
+SELECT 'Professor - Champlain College', 'Outstanding student with strong grasp of software engineering principles. Olivier''s dedication to SCRUM methodologies and quality testing practices sets him apart from peers.', 'APPROVED'
 WHERE NOT EXISTS (SELECT 1 FROM testimonials WHERE author_name = 'Professor - Champlain College' AND content = 'Outstanding student with strong grasp of software engineering principles. Olivier''s dedication to SCRUM methodologies and quality testing practices sets him apart from peers.');
 
-INSERT INTO testimonials (author_name, content, approved)
-SELECT 'Peer Developer - Pet Clinic Project', 'Working with Olivier on the microservices project was productive. Great teamwork, solid understanding of Spring Boot and React, and always willing to help teammates troubleshoot issues.', true
+INSERT INTO testimonials (author_name, content, approval_status)
+SELECT 'Peer Developer - Pet Clinic Project', 'Working with Olivier on the microservices project was productive. Great teamwork, solid understanding of Spring Boot and React, and always willing to help teammates troubleshoot issues.', 'APPROVED'
 WHERE NOT EXISTS (SELECT 1 FROM testimonials WHERE author_name = 'Peer Developer - Pet Clinic Project' AND content = 'Working with Olivier on the microservices project was productive. Great teamwork, solid understanding of Spring Boot and React, and always willing to help teammates troubleshoot issues.');
 
-INSERT INTO testimonials (author_name, content, approved)
-SELECT 'Manager - Lulu Bistro', 'Olivier is a reliable and professional team member with excellent customer service skills and initiative. Shows strong organizational abilities and leadership potential in his roles.', true
+INSERT INTO testimonials (author_name, content, approval_status)
+SELECT 'Manager - Lulu Bistro', 'Olivier is a reliable and professional team member with excellent customer service skills and initiative. Shows strong organizational abilities and leadership potential in his roles.', 'APPROVED'
 WHERE NOT EXISTS (SELECT 1 FROM testimonials WHERE author_name = 'Manager - Lulu Bistro' AND content = 'Olivier is a reliable and professional team member with excellent customer service skills and initiative. Shows strong organizational abilities and leadership potential in his roles.');
 
 -- Education Data

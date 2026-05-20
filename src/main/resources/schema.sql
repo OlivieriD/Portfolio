@@ -51,7 +51,8 @@ CREATE TABLE IF NOT EXISTS testimonials (
     id SERIAL PRIMARY KEY,
     author_name VARCHAR(255) NOT NULL,
     content TEXT NOT NULL,
-    approved BOOLEAN DEFAULT FALSE
+    approval_status VARCHAR(50) DEFAULT 'PENDING',
+    CONSTRAINT check_approval_status CHECK (approval_status IN ('APPROVED', 'PENDING', 'REFUSED'))
 );
 
 CREATE TABLE IF NOT EXISTS hobbies (
@@ -80,7 +81,21 @@ CREATE TABLE IF NOT EXISTS about (
 
 CREATE TABLE IF NOT EXISTS resumes (
     id SERIAL PRIMARY KEY,
-    filename VARCHAR(255) NOT NULL,
-    file_type VARCHAR(100) NOT NULL,
-    data BYTEA NOT NULL
+    -- Bilingual fields
+    title_en VARCHAR(255),
+    description_en TEXT,
+    filename_en VARCHAR(255),
+    file_type_en VARCHAR(100),
+    data_en BYTEA,
+    
+    title_fr VARCHAR(255),
+    description_fr TEXT,
+    filename_fr VARCHAR(255),
+    file_type_fr VARCHAR(100),
+    data_fr BYTEA,
+    
+    -- Legacy single-language fields (backward compatibility)
+    filename VARCHAR(255),
+    file_type VARCHAR(100),
+    data BYTEA
 );
