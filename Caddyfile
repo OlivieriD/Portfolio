@@ -6,11 +6,20 @@
 olivierdportfolio.me, www.olivierdportfolio.me {
     # Route API requests to the backend container
     handle /api/* {
-        reverse_proxy backend:8080
+        reverse_proxy backend:8080 {
+            header_uri X-Forwarded-Proto https
+            header_uri X-Forwarded-Host olivierdportfolio.me
+        }
     }
 
     # Route everything else to the frontend container
-    reverse_proxy frontend:80
+    reverse_proxy frontend:80 {
+        header_uri X-Forwarded-Proto https
+        header_uri X-Forwarded-Host olivierdportfolio.me
+        header_uri X-Forwarded-For {http.request.remote.host}
+        header_up Host {http.request.host}
+        header_up X-Real-IP {http.request.remote}
+    }
 }
 
 # Redirect HTTP to HTTPS
