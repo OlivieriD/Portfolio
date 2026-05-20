@@ -63,15 +63,15 @@ const AboutManagement = () => {
         <main className="content">
             <div className="content-header">
                 <div>
-                    <h1 className="content-title">About Section Management</h1>
-                    <p className="content-subtitle">Edit the about section content in English and French</p>
+                    <h1 className="content-title">{t('admin_about_title')}</h1>
+                    <p className="content-subtitle">{t('admin_about_subtitle')}</p>
                 </div>
             </div>
 
             <div className="admin-form-wrapper">
                 <form onSubmit={handleSubmit} className="admin-form">
                     <div className="form-group">
-                        <label htmlFor="contentEn">English Content</label>
+                        <label htmlFor="contentEn">{t('admin_about_content_en')}</label>
                         <textarea
                             id="contentEn"
                             name="contentEn"
@@ -79,12 +79,12 @@ const AboutManagement = () => {
                             onChange={handleInputChange}
                             required
                             rows="8"
-                            placeholder="Enter English content for the about section"
+                            placeholder={t('admin_about_placeholder_en')}
                         />
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="contentFr">French Content (Contenu Français)</label>
+                        <label htmlFor="contentFr">{t('admin_about_content_fr')}</label>
                         <textarea
                             id="contentFr"
                             name="contentFr"
@@ -92,7 +92,7 @@ const AboutManagement = () => {
                             onChange={handleInputChange}
                             required
                             rows="8"
-                            placeholder="Entrez le contenu français pour la section À propos"
+                            placeholder={t('admin_about_placeholder_fr')}
                         />
                     </div>
 
@@ -102,7 +102,7 @@ const AboutManagement = () => {
                             disabled={saving}
                             className="pastel-button"
                         >
-                            {saving ? t('admin_loading') : 'Save Changes'}
+                            {saving ? t('admin_loading') : t('admin_about_save')}
                         </button>
                     </div>
 

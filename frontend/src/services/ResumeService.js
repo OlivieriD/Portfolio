@@ -9,7 +9,14 @@ export const ResumeService = {
             'Content-Type': 'multipart/form-data',
         },
     }),
-    delete: () => axiosInstance.delete(SUBDOMAIN),
-    getDownloadUrl: () => `${axiosInstance.defaults.baseURL}/${SUBDOMAIN}/download`,
-    getViewUrl: () => `${axiosInstance.defaults.baseURL}/${SUBDOMAIN}/view`,
+    uploadBilingual: (formData) => axiosInstance.post(`${SUBDOMAIN}/upload-bilingual`, formData, {
+        headers: {
+            'Content-Type': 'multipart/form-data',
+        },
+    }),
+    updateMetadata: (data) => axiosInstance.put(`${SUBDOMAIN}/metadata`, data),
+    delete: () => axiosInstance.delete(`${SUBDOMAIN}`),
+    deleteBilingual: (language) => axiosInstance.delete(`${SUBDOMAIN}/${language}`),
+    getDownloadUrl: (language = 'en') => `${axiosInstance.defaults.baseURL}/${SUBDOMAIN}/download?lang=${language}`,
+    getViewUrl: (language = 'en') => `${axiosInstance.defaults.baseURL}/${SUBDOMAIN}/view?lang=${language}`,
 };

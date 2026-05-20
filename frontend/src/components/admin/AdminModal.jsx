@@ -25,7 +25,7 @@ const AdminModal = ({ type, item, onSave, onClose }) => {
             hobbies: {
                 nameEn: '', nameFr: '', descriptionEn: '', descriptionFr: '', iconUrl: ''
             },
-            testimonials: { authorName: '', content: '', approved: false }
+            testimonials: { authorName: '', content: '' }
         };
         setFormData(forms[type] || {});
     };
@@ -64,40 +64,40 @@ const AdminModal = ({ type, item, onSave, onClose }) => {
                     <>
                         <div className="form-row">
                             <div className="form-group">
-                                <label>Title (EN) *</label>
+                                <label>{t('admin_form_title_en')} {t('admin_form_required')}</label>
                                 <input name="titleEn" value={formData.titleEn || ''} onChange={handleChange} required />
                             </div>
                             <div className="form-group">
-                                <label>Title (FR) *</label>
+                                <label>{t('admin_form_title_fr')} {t('admin_form_required')}</label>
                                 <input name="titleFr" value={formData.titleFr || ''} onChange={handleChange} required />
                             </div>
                         </div>
                         <div className="form-row">
                             <div className="form-group">
-                                <label>Description (EN) *</label>
+                                <label>{t('admin_form_description_en')} {t('admin_form_required')}</label>
                                 <textarea name="descriptionEn" value={formData.descriptionEn || ''} onChange={handleChange} required rows="3" />
                             </div>
                             <div className="form-group">
-                                <label>Description (FR) *</label>
+                                <label>{t('admin_form_description_fr')} {t('admin_form_required')}</label>
                                 <textarea name="descriptionFr" value={formData.descriptionFr || ''} onChange={handleChange} required rows="3" />
                             </div>
                         </div>
                         <div className="form-group">
-                            <label>Image URL</label>
+                            <label>{t('admin_form_image_url')}</label>
                             <input name="imageUrl" value={formData.imageUrl || ''} onChange={handleChange} placeholder="https://..." />
                         </div>
                         <div className="form-row">
                             <div className="form-group">
-                                <label>GitHub Link</label>
+                                <label>{t('admin_form_github_link')}</label>
                                 <input name="githubLink" value={formData.githubLink || ''} onChange={handleChange} placeholder="https://github.com/..." />
                             </div>
                             <div className="form-group">
-                                <label>Live Link</label>
+                                <label>{t('admin_form_live_link')}</label>
                                 <input name="liveLink" value={formData.liveLink || ''} onChange={handleChange} placeholder="https://..." />
                             </div>
                         </div>
                         <div className="form-group">
-                            <label>Technologies (comma-separated)</label>
+                            <label>{t('admin_form_technologies')}</label>
                             <input 
                                 value={formData.technologies?.join(', ') || ''} 
                                 onChange={handleTechChange} 
@@ -111,23 +111,23 @@ const AdminModal = ({ type, item, onSave, onClose }) => {
                 return (
                     <>
                         <div className="form-group">
-                            <label>Skill Name *</label>
+                            <label>{t('admin_form_skill_name')} {t('admin_form_required')}</label>
                             <input name="name" value={formData.name || ''} onChange={handleChange} required />
                         </div>
                         <div className="form-row">
                             <div className="form-group">
-                                <label>Proficiency (0-100) *</label>
+                                <label>{t('admin_form_proficiency')} {t('admin_form_required')}</label>
                                 <input name="proficiency" type="number" min="0" max="100" value={formData.proficiency || 0} onChange={handleChange} required />
                             </div>
                             <div className="form-group">
-                                <label>Category *</label>
+                                <label>{t('admin_form_category')} {t('admin_form_required')}</label>
                                 <select name="category" value={formData.category || ''} onChange={handleChange} required>
-                                    <option value="">Select...</option>
-                                    <option value="Frontend">Frontend</option>
-                                    <option value="Backend">Backend</option>
-                                    <option value="Database">Database</option>
-                                    <option value="DevOps">DevOps</option>
-                                    <option value="Tools">Tools</option>
+                                    <option value="">{t('admin_form_select')}</option>
+                                    <option value="Frontend">{t('admin_form_category_frontend')}</option>
+                                    <option value="Backend">{t('admin_form_category_backend')}</option>
+                                    <option value="Database">{t('admin_form_category_database')}</option>
+                                    <option value="DevOps">{t('admin_form_category_devops')}</option>
+                                    <option value="Tools">{t('admin_form_category_tools')}</option>
                                 </select>
                             </div>
                         </div>
@@ -138,42 +138,42 @@ const AdminModal = ({ type, item, onSave, onClose }) => {
                 return (
                     <>
                         <div className="form-group">
-                            <label>Company *</label>
+                            <label>{t('admin_form_company')} {t('admin_form_required')}</label>
                             <input name="company" value={formData.company || ''} onChange={handleChange} required />
                         </div>
                         <div className="form-row">
                             <div className="form-group">
-                                <label>Role (EN) *</label>
+                                <label>{t('admin_form_role_en')} {t('admin_form_required')}</label>
                                 <input name="roleEn" value={formData.roleEn || ''} onChange={handleChange} required />
                             </div>
                             <div className="form-group">
-                                <label>Role (FR) *</label>
+                                <label>{t('admin_form_role_fr')} {t('admin_form_required')}</label>
                                 <input name="roleFr" value={formData.roleFr || ''} onChange={handleChange} required />
                             </div>
                         </div>
                         <div className="form-row">
                             <div className="form-group">
-                                <label>Description (EN) *</label>
+                                <label>{t('admin_form_description_en')} {t('admin_form_required')}</label>
                                 <textarea name="descriptionEn" value={formData.descriptionEn || ''} onChange={handleChange} required rows="3" />
                             </div>
                             <div className="form-group">
-                                <label>Description (FR) *</label>
+                                <label>{t('admin_form_description_fr')} {t('admin_form_required')}</label>
                                 <textarea name="descriptionFr" value={formData.descriptionFr || ''} onChange={handleChange} required rows="3" />
                             </div>
                         </div>
                         <div className="form-row">
                             <div className="form-group">
-                                <label>Start Date *</label>
+                                <label>{t('admin_form_start_date')} {t('admin_form_required')}</label>
                                 <input name="startDate" type="date" value={formData.startDate || ''} onChange={handleChange} required />
                             </div>
                             <div className="form-group">
-                                <label>End Date</label>
+                                <label>{t('admin_form_end_date')}</label>
                                 <input name="endDate" type="date" value={formData.endDate || ''} onChange={handleChange} />
-                                <small>Leave empty if current position</small>
+                                <small>{t('admin_form_current_position')}</small>
                             </div>
                         </div>
                         <div className="form-group">
-                            <label>Location</label>
+                            <label>{t('admin_form_location')}</label>
                             <input name="location" value={formData.location || ''} onChange={handleChange} placeholder="City, Country" />
                         </div>
                     </>
@@ -184,46 +184,46 @@ const AdminModal = ({ type, item, onSave, onClose }) => {
                     <>
                         <div className="form-row">
                             <div className="form-group">
-                                <label>School (EN) *</label>
+                                <label>{t('admin_form_school_en')} {t('admin_form_required')}</label>
                                 <input name="schoolEn" value={formData.schoolEn || ''} onChange={handleChange} required />
                             </div>
                             <div className="form-group">
-                                <label>School (FR) *</label>
+                                <label>{t('admin_form_school_fr')} {t('admin_form_required')}</label>
                                 <input name="schoolFr" value={formData.schoolFr || ''} onChange={handleChange} required />
                             </div>
                         </div>
                         <div className="form-row">
                             <div className="form-group">
-                                <label>Degree (EN) *</label>
+                                <label>{t('admin_form_degree_en')} {t('admin_form_required')}</label>
                                 <input name="degreeEn" value={formData.degreeEn || ''} onChange={handleChange} required />
                             </div>
                             <div className="form-group">
-                                <label>Degree (FR) *</label>
+                                <label>{t('admin_form_degree_fr')} {t('admin_form_required')}</label>
                                 <input name="degreeFr" value={formData.degreeFr || ''} onChange={handleChange} required />
                             </div>
                         </div>
                         <div className="form-row">
                             <div className="form-group">
-                                <label>Field of Study (EN)</label>
+                                <label>{t('admin_form_field_of_study_en')}</label>
                                 <input name="fieldOfStudyEn" value={formData.fieldOfStudyEn || ''} onChange={handleChange} />
                             </div>
                             <div className="form-group">
-                                <label>Field of Study (FR)</label>
+                                <label>{t('admin_form_field_of_study_fr')}</label>
                                 <input name="fieldOfStudyFr" value={formData.fieldOfStudyFr || ''} onChange={handleChange} />
                             </div>
                         </div>
                         <div className="form-row">
                             <div className="form-group">
-                                <label>Start Date *</label>
+                                <label>{t('admin_form_start_date')} {t('admin_form_required')}</label>
                                 <input name="startDate" type="date" value={formData.startDate || ''} onChange={handleChange} required />
                             </div>
                             <div className="form-group">
-                                <label>End Date *</label>
+                                <label>{t('admin_form_end_date')} {t('admin_form_required')}</label>
                                 <input name="endDate" type="date" value={formData.endDate || ''} onChange={handleChange} required />
                             </div>
                         </div>
                         <div className="form-group">
-                            <label>GPA</label>
+                            <label>{t('admin_form_gpa')}</label>
                             <input name="gpa" type="number" step="0.01" min="0" max="4" value={formData.gpa || ''} onChange={handleChange} placeholder="3.8" />
                         </div>
                     </>
@@ -234,26 +234,26 @@ const AdminModal = ({ type, item, onSave, onClose }) => {
                     <>
                         <div className="form-row">
                             <div className="form-group">
-                                <label>Name (EN) *</label>
+                                <label>{t('admin_form_name_en')} {t('admin_form_required')}</label>
                                 <input name="nameEn" value={formData.nameEn || ''} onChange={handleChange} required />
                             </div>
                             <div className="form-group">
-                                <label>Name (FR) *</label>
+                                <label>{t('admin_form_name_fr')} {t('admin_form_required')}</label>
                                 <input name="nameFr" value={formData.nameFr || ''} onChange={handleChange} required />
                             </div>
                         </div>
                         <div className="form-row">
                             <div className="form-group">
-                                <label>Description (EN) *</label>
+                                <label>{t('admin_form_description_en')} {t('admin_form_required')}</label>
                                 <textarea name="descriptionEn" value={formData.descriptionEn || ''} onChange={handleChange} required rows="2" />
                             </div>
                             <div className="form-group">
-                                <label>Description (FR) *</label>
+                                <label>{t('admin_form_description_fr')} {t('admin_form_required')}</label>
                                 <textarea name="descriptionFr" value={formData.descriptionFr || ''} onChange={handleChange} required rows="2" />
                             </div>
                         </div>
                         <div className="form-group">
-                            <label>Icon</label>
+                            <label>{t('admin_form_icon')}</label>
                             <input name="iconUrl" value={formData.iconUrl || ''} onChange={handleChange} placeholder="Icon or https://..." />
                         </div>
                     </>
@@ -263,23 +263,12 @@ const AdminModal = ({ type, item, onSave, onClose }) => {
                 return (
                     <>
                         <div className="form-group">
-                            <label>Author Name *</label>
+                            <label>{t('admin_form_author_name')} {t('admin_form_required')}</label>
                             <input name="authorName" value={formData.authorName || ''} onChange={handleChange} required />
                         </div>
                         <div className="form-group">
-                            <label>Content *</label>
+                            <label>{t('admin_form_content')} {t('admin_form_required')}</label>
                             <textarea name="content" value={formData.content || ''} onChange={handleChange} required rows="4" />
-                        </div>
-                        <div className="form-group">
-                            <label className="checkbox-label">
-                                <input 
-                                    name="approved" 
-                                    type="checkbox" 
-                                    checked={formData.approved || false} 
-                                    onChange={handleChange} 
-                                />
-                                Approved
-                            </label>
                         </div>
                     </>
                 );

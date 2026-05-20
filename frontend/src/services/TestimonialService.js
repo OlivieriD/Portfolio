@@ -8,7 +8,7 @@ export const TestimonialService = {
     // Admin: gets all for moderation
     getAll: () => axiosInstance.get(SUBDOMAIN),
     create: (data) => axiosInstance.post(SUBDOMAIN, data),
-    update: (id, data) => axiosInstance.patch(`${SUBDOMAIN}/${id}/approve?approved=${data.approved}`),
-    updateStatus: (id, approved) => axiosInstance.patch(`${SUBDOMAIN}/${id}/approve?approved=${approved}`),
+    update: (id, data) => axiosInstance.patch(`${SUBDOMAIN}/${id}/approve?status=${data.approvalStatus}`),
+    updateStatus: (id, status) => axiosInstance.patch(`${SUBDOMAIN}/${id}/approve?status=${status}`),
     delete: (id) => axiosInstance.delete(`${SUBDOMAIN}/${id}`),
 };

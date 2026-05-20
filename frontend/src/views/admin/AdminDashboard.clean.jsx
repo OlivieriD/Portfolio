@@ -10,6 +10,7 @@ import { TestimonialService } from '../../services/TestimonialService';
 import { ContactService } from '../../services/ContactService';
 import AdminTable from '../../components/admin/AdminTable';
 import AdminModal from '../../components/admin/AdminModal';
+import ApprovalModal from '../../components/admin/ApprovalModal';
 import ConfirmModal from '../../components/common/ConfirmModal';
 import AppManagement from './AppManagement';
 import AboutManagement from '../../components/admin/AboutManagement';
@@ -25,6 +26,7 @@ const AdminDashboard = () => {
   const [editingItem, setEditingItem] = useState(null);
   const [loading, setLoading] = useState(false);
   const [deleteConfirm, setDeleteConfirm] = useState({ show: false, id: null });
+  const [approvalModal, setApprovalModal] = useState({ show: false, item: null });
 
   const getCurrentTab = () => {
     const path = location.pathname.split('/admin/')[1];
@@ -70,8 +72,45 @@ const AdminDashboard = () => {
   };
 
   const handleEdit = (item) => {
-    setEditingItem(item);
-    setShowModal(true);
+    if (activeTab === 'testimonials') {
+      setApprovalModal({ show: true, item });
+    } else {
+      setEditingItem(item);
+      setShowModal(true);
+    }
+  };
+
+  const handleApprove = async (testimonial) => {
+    try {
+      await TestimonialService.updateStatus(testimonial.id, 'APPROVED');
+      setApprovalModal({ show: false, item: null });
+      fetchData();
+    } catch (err) {
+      console.error('Error approving testimonial:', err);
+      alert(t('admin_form_error'));
+    }
+  };
+
+  const handleReject = async (testimonial) => {
+    try {
+      await TestimonialService.updateStatus(testimonial.id, 'REFUSED');
+      setApprovalModal({ show: false, item: null });
+      fetchData();
+    } catch (err) {
+      console.error('Error rejecting testimonial:', err);
+      alert(t('admin_form_error'));
+    }
+  };
+
+  const handlePending = async (testimonial) => {
+    try {
+      await TestimonialService.updateStatus(testimonial.id, 'PENDING');
+      setApprovalModal({ show: false, item: null });
+      fetchData();
+    } catch (err) {
+      console.error('Error setting testimonial to pending:', err);
+      alert(t('admin_form_error'));
+    }
   };
 
   const handleSave = async (formData) => {
@@ -118,7 +157,7 @@ const AdminDashboard = () => {
       experiences: ['company', 'roleEn', 'startDate', 'endDate'],
       education: ['schoolEn', 'degreeEn', 'startDate', 'endDate'],
       hobbies: ['nameEn', 'nameFr', 'iconUrl'],
-      testimonials: ['authorName', 'content', 'approved'],
+      testimonials: ['authorName', 'content', 'approvalStatus'],
       contacts: ['senderName', 'senderEmail', 'subject', 'sentAt'],
     };
     return headers[activeTab] || [];
@@ -126,7 +165,7 @@ const AdminDashboard = () => {
 
   const tabs = [
     { key: 'app-management', label: t('admin_app_management') },
-    { key: 'about', label: 'About Section' },
+    { key: 'about', label: t('admin_about_section') },
     { key: 'projects', label: t('admin_projects') },
     { key: 'skills', label: t('admin_skills') },
     { key: 'experiences', label: t('admin_experiences') },
@@ -199,6 +238,17 @@ const AdminDashboard = () => {
                     setShowModal(false);
                     setEditingItem(null);
                   }}
+                />
+              )}
+
+              {approvalModal.show && (
+                <ApprovalModal
+                  isOpen={approvalModal.show}
+                  testimonial={approvalModal.item}
+                  onApprove={() => handleApprove(approvalModal.item)}
+                  onReject={() => handleReject(approvalModal.item)}
+                  onPending={() => handlePending(approvalModal.item)}
+                  onClose={() => setApprovalModal({ show: false, item: null })}
                 />
               )}
             </main>
